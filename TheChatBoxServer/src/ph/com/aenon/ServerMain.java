@@ -180,19 +180,29 @@ public class ServerMain {
 
                 sendData = toSend.toUpperCase().getBytes();
 
-                for (int i = 0; i < addressList.size(); i++){
-                    System.out.println(addressList.get(i));
-                    //IPAddress = InetAddress.getByName(addressList.get(i));
-                    //InetAddress.getByName("192.168.31.196");
+                InetAddress group = InetAddress.getByName("230.0.0.1");
+                DatagramPacket packet;
+                packet = new DatagramPacket(sendData, sendData.length, group, 4446);
+                serverSocket.send(packet);
 
-                    //sendPacket = new DatagramPacket(sendData, sendData.length, InetAddress.getByName(addressList.get(i)), port);
-                    sendPacket = new DatagramPacket(sendData, sendData.length, InetAddress.getByName(addressList.get(i)), 1);
-                    serverSocket.send(sendPacket);
-                }
+//
+//                for (int i = 0; i < addressList.size(); i++){
+//                    System.out.println(addressList.get(i));
+//                    //IPAddress = InetAddress.getByName(addressList.get(i));
+//                    //InetAddress.getByName("192.168.31.196");
+//
+//                    //sendPacket = new DatagramPacket(sendData, sendData.length, InetAddress.getByName(addressList.get(i)), port);
+//                    sendPacket = new DatagramPacket(sendData, sendData.length, InetAddress.getByName(addressList.get(i)), 1);
+//                    serverSocket.send(sendPacket);
+//                }
+//
+////                sendPacket = new DatagramPacket(sendData, sendData.length, IPAddress, 1);
+////                serverSocket.send(sendPacket);
+//                //serverSocket.close();
 
-//                sendPacket = new DatagramPacket(sendData, sendData.length, IPAddress, 1);
-//                serverSocket.send(sendPacket);
-                //serverSocket.close();
+
+
+
             }
 
         }

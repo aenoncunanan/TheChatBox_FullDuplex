@@ -56,7 +56,15 @@ public class ClientMain extends Application{
 
     private static String receivedSentence;
 
-    private static receiveThread thread = new receiveThread();
+    private static receiveThread thread;
+
+    static {
+        try {
+            thread = new receiveThread();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+    }
 
     public void start(Stage primaryStage) throws Exception{
         logInScene = new Scene(createLogInContent());
