@@ -67,10 +67,12 @@ public class ServerMain {
                     }
 
                     if (!flag){
-                        addressList.add(IPAddress.toString());
+                        addressList.add(IPAddress.toString().split("/")[1]);
+//                        addressList.add();
+                        System.out.println(addressList);
                         nameList.add(clientName);
                         System.out.println("");
-                        System.out.println(clientName + "(" + IPAddress + ")" + " goes online!");
+                        System.out.println(clientName + "(" + IPAddress.toString().split("/")[1] + ")" + " goes online!");
 
                         toSend = "matched!";
                         sendData = toSend.getBytes();
@@ -102,7 +104,7 @@ public class ServerMain {
                 int c;
 
                 for (c = 0; c < addressList.size() && !flag; c++){
-                    if (IPAddress.toString().equals(addressList.get(c))) {
+                    if (IPAddress.toString().split("/")[1].equals(addressList.get(c))) {
                         if (name.equals(nameList.get(c))){
                             flag = true;
                         }
@@ -110,29 +112,87 @@ public class ServerMain {
                 }
 
                 if (flag){
-                    System.out.println(addressList);
-                    System.out.println(nameList);
+                    System.out.println("\nCurrent adresses: " + addressList);
+                    System.out.println("Current users: " + nameList);
 
                     if(c == 1){
                         System.out.println(nameList.get(0) + "(" + addressList.get(0) + ")" + " went offline!");
+                        String toSend = nameList.get(0) + " went offline!";
+
+                        sendData = toSend.toUpperCase().getBytes();
+
+                        for (int i = 0; i < addressList.size(); i++){
+                            System.out.println(addressList.get(i));
+                            //IPAddress = InetAddress.getByName(addressList.get(i));
+                            //InetAddress.getByName("192.168.31.196");
+
+                            //sendPacket = new DatagramPacket(sendData, sendData.length, InetAddress.getByName(addressList.get(i)), port);
+                            sendPacket = new DatagramPacket(sendData, sendData.length, InetAddress.getByName(addressList.get(i)), 1);
+                            serverSocket.send(sendPacket);
+                        }
+
                         nameList.remove(0);
                         addressList.remove(0);
                     }else if (c < nameList.size() || c == nameList.size() || c > nameList.size()){
                         System.out.println(nameList.get(c-1) + "(" + addressList.get(c-1) + ")" + " went offline!");
+                        String toSend = nameList.get(c-1) + " went offline!";
+
+                        sendData = toSend.toUpperCase().getBytes();
+
+                        for (int i = 0; i < addressList.size(); i++){
+                            System.out.println(addressList.get(i));
+                            //IPAddress = InetAddress.getByName(addressList.get(i));
+                            //InetAddress.getByName("192.168.31.196");
+
+                            //sendPacket = new DatagramPacket(sendData, sendData.length, InetAddress.getByName(addressList.get(i)), port);
+                            sendPacket = new DatagramPacket(sendData, sendData.length, InetAddress.getByName(addressList.get(i)), 1);
+                            serverSocket.send(sendPacket);
+                        }
+
                         nameList.remove(c-1);
                         addressList.remove(c-1);
                     }
 
-                    System.out.println(addressList);
-                    System.out.println(nameList);
+                    System.out.println("Current adresses: " + addressList);
+                    System.out.println("Current users: " + nameList);
                 }
             } else{
-                System.out.println(IPAddress + ": " + sentence);
-                String toSend = IPAddress + ": " + sentence;
+                boolean flag = false;
+                int c;
+
+                for (c = 0; c < addressList.size() && !flag; c++){
+                    if (IPAddress.toString().split("/")[1].equals(addressList.get(c))) {
+                            flag = true;
+                    }
+                }
+
+                String toSend = "";
+
+                if (flag){
+                    if(c == 1){
+                        System.out.println(nameList.get(0) + "(" + addressList.get(0) + "): " + sentence);
+                        toSend = nameList.get(0) + ": " + sentence;
+                    }else if (c < nameList.size() || c == nameList.size() || c > nameList.size()){
+                        System.out.println(nameList.get(c-1) + "(" + addressList.get(c-1) + "): " + sentence);
+                        toSend = nameList.get(c-1) + ": " + sentence;
+                    }
+                }
+
                 sendData = toSend.toUpperCase().getBytes();
 
-                sendPacket = new DatagramPacket(sendData, sendData.length, IPAddress, port);
-                serverSocket.send(sendPacket);
+                for (int i = 0; i < addressList.size(); i++){
+                    System.out.println(addressList.get(i));
+                    //IPAddress = InetAddress.getByName(addressList.get(i));
+                    //InetAddress.getByName("192.168.31.196");
+
+                    //sendPacket = new DatagramPacket(sendData, sendData.length, InetAddress.getByName(addressList.get(i)), port);
+                    sendPacket = new DatagramPacket(sendData, sendData.length, InetAddress.getByName(addressList.get(i)), 1);
+                    serverSocket.send(sendPacket);
+                }
+
+//                sendPacket = new DatagramPacket(sendData, sendData.length, IPAddress, 1);
+//                serverSocket.send(sendPacket);
+                //serverSocket.close();
             }
 
         }

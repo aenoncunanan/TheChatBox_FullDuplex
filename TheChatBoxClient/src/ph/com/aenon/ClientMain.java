@@ -20,9 +20,7 @@ import javafx.stage.Stage;
 import javafx.stage.WindowEvent;
 
 import java.io.IOException;
-import java.net.DatagramPacket;
-import java.net.DatagramSocket;
-import java.net.InetAddress;
+import java.net.*;
 
 import static javafx.geometry.Pos.*;
 
@@ -37,13 +35,14 @@ public class ClientMain extends Application{
     private static String ServerIP = ""; //Server's IP Address
     public static String name = ""; //User's Screen Name
 
-    private static DatagramSocket clientSocket;
-    private static DatagramPacket sendPacket;
-    private static DatagramPacket receivePacket;
-    private static InetAddress IPAddress;
+    public static DatagramSocket clientSocket;
+    public static DatagramPacket sendPacket;
+    public static DatagramPacket receivePacket;
+    public static InetAddress IPAddress;
+    public static int portNumber = 9876;
 
-    private static byte[] sendData = new byte[1024];
-    private static byte[] receiveData = new byte[1024];
+    public static byte[] sendData = new byte[1024];
+    public static byte[] receiveData = new byte[1024];
 
     private static String serverPassword = "";
     private static String codeOffline = "OFFLINE321.*";
@@ -56,6 +55,8 @@ public class ClientMain extends Application{
     private static Text message;
 
     private static String receivedSentence;
+
+    private static receiveThread thread = new receiveThread();
 
     public void start(Stage primaryStage) throws Exception{
         logInScene = new Scene(createLogInContent());
@@ -215,7 +216,9 @@ public class ClientMain extends Application{
         stage.setScene(logInScene);                                 //Set the scene for the Login stage
     }
 
-    public static void onChat(){
+    public static void onChat() throws Exception {
+        thread.start();
+
         Chat chat = new Chat();
         stage.setTitle("The ChatBox (Client): GroupChat");
         stage.setScene(
@@ -235,28 +238,28 @@ public class ClientMain extends Application{
     public static void sendMessage()throws Exception{
         sendData = new byte[1024];
         sendData = Chat.msg.getBytes();
-        sendPacket = new DatagramPacket(sendData, sendData.length, IPAddress, 9876);
+        sendPacket = new DatagramPacket(sendData, sendData.length, IPAddress, portNumber);
         clientSocket.send(sendPacket);
 
-        receiveMessage();
+        //receiveMessage();
     }
-
-    public static void receiveMessage()throws Exception{
-        receiveData = new byte[1024];
-        receivePacket = new DatagramPacket(receiveData, receiveData.length);
-        clientSocket.receive(receivePacket);
-
-        String received = new String(receivePacket.getData());
-        System.out.println(received);
-
-        Chat.convoMessage.appendText("\n" + received);
-    }
+//
+//    public static void receiveMessage()throws Exception{
+//        receiveData = new byte[1024];
+//        receivePacket = new DatagramPacket(receiveData, receiveData.length);
+//        clientSocket.receive(receivePacket);
+//
+//        String received = new String(receivePacket.getData());
+//        System.out.println(received);
+//
+//        Chat.convoMessage.appendText("\n" + received);
+//    }
 
     public static void goOffline()throws Exception{
         String toSend = codeOffline + name;
         sendData = toSend.getBytes();
 
-        sendPacket = new DatagramPacket(sendData, sendData.length, IPAddress, 9876);
+        sendPacket = new DatagramPacket(sendData, sendData.length, IPAddress, portNumber);
         clientSocket.send(sendPacket);
 
         clientSocket.close();
@@ -269,7 +272,7 @@ public class ClientMain extends Application{
         sendData = new byte[1024];
         String toSend = ".,paSs,#" + serverPassword;
         sendData = toSend.getBytes();
-        sendPacket = new DatagramPacket(sendData, sendData.length, IPAddress, 9876);
+        sendPacket = new DatagramPacket(sendData, sendData.length, IPAddress, portNumber);
         clientSocket.send(sendPacket);
 
         clientSocket.setSoTimeout(2000); //to stop listening to a wrong IP Address
@@ -282,7 +285,7 @@ public class ClientMain extends Application{
             sendData = new byte[1024];
             toSend = name;
             sendData = toSend.getBytes();
-            sendPacket = new DatagramPacket(sendData, sendData.length, IPAddress, 9876);
+            sendPacket = new DatagramPacket(sendData, sendData.length, IPAddress, portNumber);
             clientSocket.send(sendPacket);
 
             receiveData = new byte[1024];
