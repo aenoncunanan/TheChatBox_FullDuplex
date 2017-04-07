@@ -34,7 +34,7 @@ public class receiveThread extends Thread{
             String received = new String(receivePacket.getData(), 0, receivePacket.getLength());
 
             System.out.println(received);
-            Chat.convoMessage.appendText("\n" + received);
+            GroupChat.convoMessage.appendText("\n" + received);
 
             if (!isConnected){
                 try {
@@ -65,7 +65,7 @@ public class receiveThread extends Thread{
 //                clientSocket.receive(receivePacket);
 //                String received = new String(receivePacket.getData());
 //                System.out.println(received);
-//                Chat.convoMessage.appendText("\n" + received);
+//                GroupChat.convoMessage.appendText("\n" + received);
 //            } catch (IOException e) {
 //                System.out.println(e);
 //                e.printStackTrace();

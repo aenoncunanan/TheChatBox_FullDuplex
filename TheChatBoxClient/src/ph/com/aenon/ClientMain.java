@@ -232,7 +232,7 @@ public class ClientMain extends Application{
         gridPane.setTranslateX(0);
         gridPane.setTranslateY(10);
 
-        Label text = new Label("Chat with ");
+        Label text = new Label("GroupChat with ");
         text.setFont(Font.font("Arial Rounded MT Bold", FontWeight.NORMAL, 20));
         text.setTextFill(Color.WHITE);
         gridPane.add(text, 0, 0);
@@ -262,6 +262,15 @@ public class ClientMain extends Application{
         privateStage.setScene(privateWindow);
         privateStage.setResizable(false);
         privateStage.show();
+
+        goBtn.setOnAction(event -> {
+            PrivateChat privatechat = new PrivateChat();
+            privateStage.setTitle("The ChatBox (Client): PrivateChat");
+            privateStage.setScene(
+                    new Scene(privatechat.main(), displayWidth, displayHeight)
+            );
+        });
+
     }
 
     private static void getOnlineUsers() throws IOException {
@@ -313,10 +322,10 @@ public class ClientMain extends Application{
         receiveThread thread = new receiveThread();
         thread.start();
 
-        Chat chat = new Chat();
+        GroupChat groupchat = new GroupChat();
         stage.setTitle("The ChatBox (Client): GroupChat");
         stage.setScene(
-                new Scene(chat.main(), displayWidth, displayHeight)
+                new Scene(groupchat.main(), displayWidth, displayHeight)
         );
         stage.setOnCloseRequest(new EventHandler<WindowEvent>() {
             @Override
@@ -331,7 +340,7 @@ public class ClientMain extends Application{
 
     public static void sendMessage()throws Exception{
         sendData = new byte[1024];
-        sendData = Chat.msg.getBytes();
+        sendData = GroupChat.msg.getBytes();
         sendPacket = new DatagramPacket(sendData, sendData.length, IPAddress, portNumber);
         clientSocket.send(sendPacket);
 
@@ -346,7 +355,7 @@ public class ClientMain extends Application{
 //        String received = new String(receivePacket.getData());
 //        System.out.println(received);
 //
-//        Chat.convoMessage.appendText("\n" + received);
+//        GroupChat.convoMessage.appendText("\n" + received);
 //    }
 
     public static void goOffline()throws Exception{
