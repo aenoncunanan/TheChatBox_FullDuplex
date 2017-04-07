@@ -7,9 +7,7 @@ import javafx.geometry.Insets;
 import javafx.geometry.Pos;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
-import javafx.scene.control.Button;
-import javafx.scene.control.PasswordField;
-import javafx.scene.control.TextField;
+import javafx.scene.control.*;
 import javafx.scene.image.ImageView;
 import javafx.scene.layout.*;
 import javafx.scene.paint.Color;
@@ -55,16 +53,6 @@ public class ClientMain extends Application{
     private static Text message;
 
     private static String receivedSentence;
-
-    private static receiveThread thread;
-
-    static {
-        try {
-            thread = new receiveThread();
-        } catch (IOException e) {
-            e.printStackTrace();
-        }
-    }
 
     public void start(Stage primaryStage) throws Exception{
         logInScene = new Scene(createLogInContent());
@@ -190,7 +178,7 @@ public class ClientMain extends Application{
                     connectToServer();
 
                     if (flag){
-                        onChat();
+                        onGroupChat();
                     }else{
                         message.setText(
                                 "Invalid ScreenName or"+
@@ -224,7 +212,53 @@ public class ClientMain extends Application{
         stage.setScene(logInScene);                                 //Set the scene for the Login stage
     }
 
-    public static void onChat() throws Exception {
+    public static void onPrivateChat() {
+        StackPane privateScene = new StackPane();
+
+        //Set the background image
+        ImageView imgBackground = Util.loadImage2View("res//The-ChatBox-Private.png", displayWidth, displayHeight);
+        if (imgBackground != null) {
+            privateScene.getChildren().add(imgBackground);
+        }
+
+        GridPane gridPane = new GridPane();
+        gridPane.setAlignment(CENTER);
+        gridPane.setTranslateX(0);
+        gridPane.setTranslateY(10);
+
+        Label text = new Label("Chat with ");
+        text.setFont(Font.font("Arial Rounded MT Bold", FontWeight.NORMAL, 20));
+        text.setTextFill(Color.WHITE);
+        gridPane.add(text, 0, 0);
+
+        ComboBox onlineUsers = new ComboBox();
+        //onlineUsers.getItems().add("Aenondddddddddsdsdsddddd");
+        onlineUsers.setValue("Select a user");
+        onlineUsers.setMaxWidth(250);
+        gridPane.add(onlineUsers, 1, 0);
+
+        Button goBtn = new Button("Go");
+        goBtn.setDefaultButton(true);
+        goBtn.setPrefHeight(20);
+        HBox hbBtn = new HBox(4);
+        hbBtn.setAlignment(Pos.TOP_CENTER);
+        hbBtn.getChildren().add(goBtn);
+        gridPane.add(goBtn, 2, 0);
+
+        privateScene.getChildren().add(gridPane);
+
+        Scene privateWindow = new Scene(privateScene, displayWidth, displayHeight);
+
+        Stage privateStage = new Stage();
+        privateStage.setTitle("The ChatBox (Client): PrivateChat");
+        privateStage.setScene(privateWindow);
+        privateStage.setResizable(false);
+        privateStage.show();
+    }
+
+
+    public static void onGroupChat() throws Exception {
+        receiveThread thread = new receiveThread();
         thread.start();
 
         Chat chat = new Chat();
@@ -271,6 +305,7 @@ public class ClientMain extends Application{
         clientSocket.send(sendPacket);
 
         clientSocket.close();
+        receiveThread.isConnected = false;
     }
 
     public static void connectToServer() throws Exception{
@@ -313,5 +348,4 @@ public class ClientMain extends Application{
     public static void main(String[] args) throws Exception{
         launch(args);
     }
-
 }

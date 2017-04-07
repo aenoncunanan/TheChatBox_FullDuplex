@@ -9,10 +9,15 @@ public class ServerMain {
     private static DatagramPacket receivePacket;
     private static DatagramPacket sendPacket;
 
+    private static InetAddress groupAddress;
+    private static int groupPort = 4446;
+
     private static ArrayList<String> addressList = new ArrayList<String>();
     private static ArrayList<String> nameList = new ArrayList<String>();
 
     public static void main(String[] args) throws Exception{
+        groupAddress = InetAddress.getByName("230.0.0.1");
+
         System.out.println("UDP Server Online!");
         System.out.println("");
 
@@ -45,6 +50,7 @@ public class ServerMain {
                 offline = offline + sentence.charAt(offset);
             }
 
+            //Check if client is connecting
             if (checkCode.equals(preCode)){
                 if (sentence.equals(preCode + codeOnline)){
                     String toSend = "prematched!";
@@ -68,7 +74,6 @@ public class ServerMain {
 
                     if (!flag){
                         addressList.add(IPAddress.toString().split("/")[1]);
-//                        addressList.add();
                         System.out.println(addressList);
                         nameList.add(clientName);
                         System.out.println("");
@@ -79,6 +84,13 @@ public class ServerMain {
 
                         sendPacket = new DatagramPacket(sendData, sendData.length, IPAddress, port);
                         serverSocket.send(sendPacket);
+
+                        toSend = clientName + " goes online!";
+                        sendData = toSend.getBytes();
+
+                        sendPacket = new DatagramPacket(sendData, sendData.length, groupAddress, groupPort);
+                        serverSocket.send(sendPacket);
+
                     }else if (flag){
                         toSend = "mismatched!";
                         sendData = toSend.getBytes();
@@ -93,6 +105,7 @@ public class ServerMain {
                     sendPacket = new DatagramPacket(sendData, sendData.length, IPAddress, port);
                     serverSocket.send(sendPacket);
                 }
+            //Check if client is disconnecting
             }else if (offline.equals(codeOffline)){
 
                 String name = "";
@@ -119,17 +132,10 @@ public class ServerMain {
                         System.out.println(nameList.get(0) + "(" + addressList.get(0) + ")" + " went offline!");
                         String toSend = nameList.get(0) + " went offline!";
 
-                        sendData = toSend.toUpperCase().getBytes();
+                        sendData = toSend.getBytes();
 
-                        for (int i = 0; i < addressList.size(); i++){
-                            System.out.println(addressList.get(i));
-                            //IPAddress = InetAddress.getByName(addressList.get(i));
-                            //InetAddress.getByName("192.168.31.196");
-
-                            //sendPacket = new DatagramPacket(sendData, sendData.length, InetAddress.getByName(addressList.get(i)), port);
-                            sendPacket = new DatagramPacket(sendData, sendData.length, InetAddress.getByName(addressList.get(i)), 1);
-                            serverSocket.send(sendPacket);
-                        }
+                        sendPacket = new DatagramPacket(sendData, sendData.length, groupAddress, groupPort);
+                        serverSocket.send(sendPacket);
 
                         nameList.remove(0);
                         addressList.remove(0);
@@ -137,17 +143,10 @@ public class ServerMain {
                         System.out.println(nameList.get(c-1) + "(" + addressList.get(c-1) + ")" + " went offline!");
                         String toSend = nameList.get(c-1) + " went offline!";
 
-                        sendData = toSend.toUpperCase().getBytes();
+                        sendData = toSend.getBytes();
 
-                        for (int i = 0; i < addressList.size(); i++){
-                            System.out.println(addressList.get(i));
-                            //IPAddress = InetAddress.getByName(addressList.get(i));
-                            //InetAddress.getByName("192.168.31.196");
-
-                            //sendPacket = new DatagramPacket(sendData, sendData.length, InetAddress.getByName(addressList.get(i)), port);
-                            sendPacket = new DatagramPacket(sendData, sendData.length, InetAddress.getByName(addressList.get(i)), 1);
-                            serverSocket.send(sendPacket);
-                        }
+                        sendPacket = new DatagramPacket(sendData, sendData.length, groupAddress, groupPort);
+                        serverSocket.send(sendPacket);
 
                         nameList.remove(c-1);
                         addressList.remove(c-1);
@@ -156,6 +155,7 @@ public class ServerMain {
                     System.out.println("Current adresses: " + addressList);
                     System.out.println("Current users: " + nameList);
                 }
+            //If client is sending a message
             } else{
                 boolean flag = false;
                 int c;
@@ -178,31 +178,10 @@ public class ServerMain {
                     }
                 }
 
-                sendData = toSend.toUpperCase().getBytes();
+                sendData = toSend.getBytes();
 
-                InetAddress group = InetAddress.getByName("230.0.0.1");
-                DatagramPacket packet;
-                packet = new DatagramPacket(sendData, sendData.length, group, 4446);
-                serverSocket.send(packet);
-
-//
-//                for (int i = 0; i < addressList.size(); i++){
-//                    System.out.println(addressList.get(i));
-//                    //IPAddress = InetAddress.getByName(addressList.get(i));
-//                    //InetAddress.getByName("192.168.31.196");
-//
-//                    //sendPacket = new DatagramPacket(sendData, sendData.length, InetAddress.getByName(addressList.get(i)), port);
-//                    sendPacket = new DatagramPacket(sendData, sendData.length, InetAddress.getByName(addressList.get(i)), 1);
-//                    serverSocket.send(sendPacket);
-//                }
-//
-////                sendPacket = new DatagramPacket(sendData, sendData.length, IPAddress, 1);
-////                serverSocket.send(sendPacket);
-//                //serverSocket.close();
-
-
-
-
+                sendPacket = new DatagramPacket(sendData, sendData.length, groupAddress, groupPort);
+                serverSocket.send(sendPacket);
             }
 
         }

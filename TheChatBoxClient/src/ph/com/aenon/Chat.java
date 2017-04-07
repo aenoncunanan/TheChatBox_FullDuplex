@@ -15,6 +15,7 @@ import javafx.scene.paint.Color;
 import javafx.scene.text.Font;
 import javafx.scene.text.FontWeight;
 import javafx.scene.text.Text;
+import javafx.stage.Stage;
 
 import java.net.DatagramPacket;
 import java.net.InetAddress;
@@ -98,6 +99,11 @@ public class Chat {
 
         privateBtn.setOnAction(event -> {
             //open another window to establish private communication with another client
+            try {
+                ClientMain.onPrivateChat();
+            } catch (Exception e) {
+                e.printStackTrace();
+            }
         });
 
         //Set the conversation gridPane's properties
