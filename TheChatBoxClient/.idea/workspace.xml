@@ -9,13 +9,9 @@
     <list default="true" id="141d8d2a-7867-4b18-ab39-253929abca34" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/TheChatBoxClient/ph/com/aenon/ClientMain$1.class" afterPath="$PROJECT_DIR$/out/production/TheChatBoxClient/ph/com/aenon/ClientMain$1.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/TheChatBoxClient/ph/com/aenon/ClientMain.class" afterPath="$PROJECT_DIR$/out/production/TheChatBoxClient/ph/com/aenon/ClientMain.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/TheChatBoxClient/ph/com/aenon/receiveThread.class" afterPath="$PROJECT_DIR$/out/production/TheChatBoxClient/ph/com/aenon/receiveThread.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/res/The ChatBox.psd" afterPath="$PROJECT_DIR$/res/The ChatBox.psd" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../TheChatBoxServer/out/production/TheChatBoxServer/ph/com/aenon/ServerMain.class" afterPath="$PROJECT_DIR$/../TheChatBoxServer/out/production/TheChatBoxServer/ph/com/aenon/ServerMain.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/ph/com/aenon/Chat.java" afterPath="$PROJECT_DIR$/src/ph/com/aenon/Chat.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/ph/com/aenon/ClientMain.java" afterPath="$PROJECT_DIR$/src/ph/com/aenon/ClientMain.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/ph/com/aenon/receiveThread.java" afterPath="$PROJECT_DIR$/src/ph/com/aenon/receiveThread.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../TheChatBoxServer/.idea/workspace.xml" afterPath="$PROJECT_DIR$/../TheChatBoxServer/.idea/workspace.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../TheChatBoxServer/src/ph/com/aenon/ServerMain.java" afterPath="$PROJECT_DIR$/../TheChatBoxServer/src/ph/com/aenon/ServerMain.java" />
     </list>
@@ -41,14 +37,17 @@
       <file leaf-file-name="ClientMain.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/ph/com/aenon/ClientMain.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="302">
-              <caret line="247" column="49" lean-forward="true" selection-start-line="247" selection-start-column="49" selection-end-line="247" selection-end-column="49" />
+            <state relative-caret-position="683">
+              <caret line="266" column="60" lean-forward="false" selection-start-line="266" selection-start-column="60" selection-end-line="266" selection-end-column="60" />
               <folding>
                 <element signature="imports" expanded="true" />
+                <element signature="e#1697#1705#0" expanded="true" />
+                <element signature="e#1770#1778#0" expanded="true" />
                 <element signature="method#onLogIn#0;class#ClientMain#0" expanded="false" />
+                <element signature="method#getOnlineUsers#0;class#ClientMain#0" expanded="false" />
                 <element signature="method#onGroupChat#0;class#ClientMain#0" expanded="false" />
                 <element signature="method#sendMessage#0;class#ClientMain#0" expanded="false" />
-                <element signature="e#9852#9854#0" expanded="false" />
+                <element signature="e#11824#11826#0" expanded="false" />
                 <element signature="method#goOffline#0;class#ClientMain#0" expanded="false" />
                 <element signature="method#connectToServer#0;class#ClientMain#0" expanded="false" />
                 <element signature="method#main#0;class#ClientMain#0" expanded="false" />
@@ -60,10 +59,9 @@
       <file leaf-file-name="receiveThread.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/ph/com/aenon/receiveThread.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-143">
-              <caret line="11" column="61" lean-forward="true" selection-start-line="11" selection-start-column="61" selection-end-line="11" selection-end-column="61" />
+            <state relative-caret-position="170">
+              <caret line="11" column="61" lean-forward="false" selection-start-line="11" selection-start-column="61" selection-end-line="11" selection-end-column="61" />
               <folding>
-                <element signature="imports" expanded="true" />
                 <element signature="e#1379#1394#0" expanded="false" />
               </folding>
             </state>
@@ -73,9 +71,11 @@
       <file leaf-file-name="Chat.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/ph/com/aenon/Chat.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="289">
+            <state relative-caret-position="2023">
               <caret line="141" column="0" lean-forward="false" selection-start-line="141" selection-start-column="0" selection-end-line="145" selection-end-column="42" />
-              <folding />
+              <folding>
+                <element signature="imports" expanded="false" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -399,14 +399,14 @@
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Nl-Palette" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.31750742" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.31722054" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Palette&#9;" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Image Layers" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Analysis" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.17210683" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.20623146" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Properties" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Tool" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
@@ -416,8 +416,8 @@
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="UI Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Theme Preview" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
-      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3984733" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
+      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3984733" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
@@ -477,7 +477,7 @@
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/ph/com/aenon/ClientMain.java</url>
-          <line>260</line>
+          <line>312</line>
           <properties />
           <option name="timeStamp" value="1" />
         </line-breakpoint>
@@ -496,7 +496,6 @@
         <state relative-caret-position="816">
           <caret line="48" column="0" lean-forward="true" selection-start-line="48" selection-start-column="0" selection-end-line="48" selection-end-column="0" />
           <folding>
-            <element signature="imports" expanded="true" />
             <element signature="e#1379#1394#0" expanded="false" />
           </folding>
         </state>
@@ -506,7 +505,9 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="2584">
           <caret line="152" column="41" lean-forward="false" selection-start-line="152" selection-start-column="41" selection-end-line="152" selection-end-column="41" />
-          <folding />
+          <folding>
+            <element signature="imports" expanded="false" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -516,10 +517,13 @@
           <caret line="264" column="42" lean-forward="false" selection-start-line="264" selection-start-column="42" selection-end-line="264" selection-end-column="42" />
           <folding>
             <element signature="imports" expanded="true" />
+            <element signature="e#1697#1705#0" expanded="true" />
+            <element signature="e#1770#1778#0" expanded="true" />
             <element signature="method#onLogIn#0;class#ClientMain#0" expanded="false" />
+            <element signature="method#getOnlineUsers#0;class#ClientMain#0" expanded="false" />
             <element signature="method#onGroupChat#0;class#ClientMain#0" expanded="false" />
             <element signature="method#sendMessage#0;class#ClientMain#0" expanded="false" />
-            <element signature="e#9852#9854#0" expanded="false" />
+            <element signature="e#11824#11826#0" expanded="false" />
             <element signature="method#goOffline#0;class#ClientMain#0" expanded="false" />
             <element signature="method#connectToServer#0;class#ClientMain#0" expanded="false" />
             <element signature="method#main#0;class#ClientMain#0" expanded="false" />
@@ -531,7 +535,9 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="2584">
           <caret line="152" column="41" lean-forward="false" selection-start-line="152" selection-start-column="41" selection-end-line="152" selection-end-column="41" />
-          <folding />
+          <folding>
+            <element signature="imports" expanded="false" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -540,7 +546,6 @@
         <state relative-caret-position="408">
           <caret line="24" column="39" lean-forward="false" selection-start-line="24" selection-start-column="39" selection-end-line="24" selection-end-column="39" />
           <folding>
-            <element signature="imports" expanded="true" />
             <element signature="e#1379#1394#0" expanded="false" />
           </folding>
         </state>
@@ -552,10 +557,13 @@
           <caret line="264" column="42" lean-forward="false" selection-start-line="264" selection-start-column="42" selection-end-line="264" selection-end-column="42" />
           <folding>
             <element signature="imports" expanded="true" />
+            <element signature="e#1697#1705#0" expanded="true" />
+            <element signature="e#1770#1778#0" expanded="true" />
             <element signature="method#onLogIn#0;class#ClientMain#0" expanded="false" />
+            <element signature="method#getOnlineUsers#0;class#ClientMain#0" expanded="false" />
             <element signature="method#onGroupChat#0;class#ClientMain#0" expanded="false" />
             <element signature="method#sendMessage#0;class#ClientMain#0" expanded="false" />
-            <element signature="e#9852#9854#0" expanded="false" />
+            <element signature="e#11824#11826#0" expanded="false" />
             <element signature="method#goOffline#0;class#ClientMain#0" expanded="false" />
             <element signature="method#connectToServer#0;class#ClientMain#0" expanded="false" />
             <element signature="method#main#0;class#ClientMain#0" expanded="false" />
@@ -567,7 +575,9 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="2227">
           <caret line="152" column="41" lean-forward="false" selection-start-line="152" selection-start-column="41" selection-end-line="152" selection-end-column="41" />
-          <folding />
+          <folding>
+            <element signature="imports" expanded="false" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -576,7 +586,6 @@
         <state relative-caret-position="408">
           <caret line="24" column="39" lean-forward="true" selection-start-line="24" selection-start-column="39" selection-end-line="24" selection-end-column="39" />
           <folding>
-            <element signature="imports" expanded="true" />
             <element signature="e#1379#1394#0" expanded="false" />
           </folding>
         </state>
@@ -588,10 +597,13 @@
           <caret line="264" column="42" lean-forward="true" selection-start-line="264" selection-start-column="42" selection-end-line="264" selection-end-column="42" />
           <folding>
             <element signature="imports" expanded="true" />
+            <element signature="e#1697#1705#0" expanded="true" />
+            <element signature="e#1770#1778#0" expanded="true" />
             <element signature="method#onLogIn#0;class#ClientMain#0" expanded="false" />
+            <element signature="method#getOnlineUsers#0;class#ClientMain#0" expanded="false" />
             <element signature="method#onGroupChat#0;class#ClientMain#0" expanded="false" />
             <element signature="method#sendMessage#0;class#ClientMain#0" expanded="false" />
-            <element signature="e#9852#9854#0" expanded="false" />
+            <element signature="e#11824#11826#0" expanded="false" />
             <element signature="method#goOffline#0;class#ClientMain#0" expanded="false" />
             <element signature="method#connectToServer#0;class#ClientMain#0" expanded="false" />
             <element signature="method#main#0;class#ClientMain#0" expanded="false" />
@@ -603,7 +615,9 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="2227">
           <caret line="152" column="41" lean-forward="false" selection-start-line="152" selection-start-column="41" selection-end-line="152" selection-end-column="41" />
-          <folding />
+          <folding>
+            <element signature="imports" expanded="false" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -612,7 +626,6 @@
         <state relative-caret-position="170">
           <caret line="10" column="51" lean-forward="false" selection-start-line="10" selection-start-column="51" selection-end-line="10" selection-end-column="51" />
           <folding>
-            <element signature="imports" expanded="true" />
             <element signature="e#1379#1394#0" expanded="false" />
           </folding>
         </state>
@@ -624,10 +637,13 @@
           <caret line="217" column="51" lean-forward="false" selection-start-line="217" selection-start-column="51" selection-end-line="217" selection-end-column="51" />
           <folding>
             <element signature="imports" expanded="true" />
+            <element signature="e#1697#1705#0" expanded="true" />
+            <element signature="e#1770#1778#0" expanded="true" />
             <element signature="method#onLogIn#0;class#ClientMain#0" expanded="false" />
+            <element signature="method#getOnlineUsers#0;class#ClientMain#0" expanded="false" />
             <element signature="method#onGroupChat#0;class#ClientMain#0" expanded="false" />
             <element signature="method#sendMessage#0;class#ClientMain#0" expanded="false" />
-            <element signature="e#9852#9854#0" expanded="false" />
+            <element signature="e#11824#11826#0" expanded="false" />
             <element signature="method#goOffline#0;class#ClientMain#0" expanded="false" />
             <element signature="method#connectToServer#0;class#ClientMain#0" expanded="false" />
             <element signature="method#main#0;class#ClientMain#0" expanded="false" />
@@ -639,7 +655,9 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="612">
           <caret line="36" column="40" lean-forward="false" selection-start-line="36" selection-start-column="40" selection-end-line="36" selection-end-column="40" />
-          <folding />
+          <folding>
+            <element signature="imports" expanded="false" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -648,7 +666,6 @@
         <state relative-caret-position="442">
           <caret line="26" column="57" lean-forward="false" selection-start-line="26" selection-start-column="57" selection-end-line="26" selection-end-column="57" />
           <folding>
-            <element signature="imports" expanded="true" />
             <element signature="e#1379#1394#0" expanded="false" />
           </folding>
         </state>
@@ -660,10 +677,13 @@
           <caret line="247" column="39" lean-forward="false" selection-start-line="247" selection-start-column="39" selection-end-line="247" selection-end-column="39" />
           <folding>
             <element signature="imports" expanded="true" />
+            <element signature="e#1697#1705#0" expanded="true" />
+            <element signature="e#1770#1778#0" expanded="true" />
             <element signature="method#onLogIn#0;class#ClientMain#0" expanded="false" />
+            <element signature="method#getOnlineUsers#0;class#ClientMain#0" expanded="false" />
             <element signature="method#onGroupChat#0;class#ClientMain#0" expanded="false" />
             <element signature="method#sendMessage#0;class#ClientMain#0" expanded="false" />
-            <element signature="e#9852#9854#0" expanded="false" />
+            <element signature="e#11824#11826#0" expanded="false" />
             <element signature="method#goOffline#0;class#ClientMain#0" expanded="false" />
             <element signature="method#connectToServer#0;class#ClientMain#0" expanded="false" />
             <element signature="method#main#0;class#ClientMain#0" expanded="false" />
@@ -675,7 +695,9 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="255">
           <caret line="36" column="40" lean-forward="false" selection-start-line="36" selection-start-column="40" selection-end-line="36" selection-end-column="40" />
-          <folding />
+          <folding>
+            <element signature="imports" expanded="false" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -684,7 +706,6 @@
         <state relative-caret-position="629">
           <caret line="37" column="36" lean-forward="true" selection-start-line="37" selection-start-column="36" selection-end-line="37" selection-end-column="36" />
           <folding>
-            <element signature="imports" expanded="true" />
             <element signature="e#1379#1394#0" expanded="false" />
           </folding>
         </state>
@@ -695,7 +716,6 @@
         <state relative-caret-position="425">
           <caret line="25" column="20" lean-forward="true" selection-start-line="25" selection-start-column="20" selection-end-line="25" selection-end-column="20" />
           <folding>
-            <element signature="imports" expanded="true" />
             <element signature="e#1379#1394#0" expanded="false" />
           </folding>
         </state>
@@ -705,7 +725,9 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="255">
           <caret line="36" column="40" lean-forward="true" selection-start-line="36" selection-start-column="40" selection-end-line="36" selection-end-column="40" />
-          <folding />
+          <folding>
+            <element signature="imports" expanded="false" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -715,10 +737,13 @@
           <caret line="247" column="39" lean-forward="true" selection-start-line="247" selection-start-column="39" selection-end-line="247" selection-end-column="39" />
           <folding>
             <element signature="imports" expanded="true" />
+            <element signature="e#1697#1705#0" expanded="true" />
+            <element signature="e#1770#1778#0" expanded="true" />
             <element signature="method#onLogIn#0;class#ClientMain#0" expanded="false" />
+            <element signature="method#getOnlineUsers#0;class#ClientMain#0" expanded="false" />
             <element signature="method#onGroupChat#0;class#ClientMain#0" expanded="false" />
             <element signature="method#sendMessage#0;class#ClientMain#0" expanded="false" />
-            <element signature="e#9852#9854#0" expanded="false" />
+            <element signature="e#11824#11826#0" expanded="false" />
             <element signature="method#goOffline#0;class#ClientMain#0" expanded="false" />
             <element signature="method#connectToServer#0;class#ClientMain#0" expanded="false" />
             <element signature="method#main#0;class#ClientMain#0" expanded="false" />
@@ -732,10 +757,13 @@
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
             <element signature="imports" expanded="true" />
+            <element signature="e#1697#1705#0" expanded="true" />
+            <element signature="e#1770#1778#0" expanded="true" />
             <element signature="method#onLogIn#0;class#ClientMain#0" expanded="false" />
+            <element signature="method#getOnlineUsers#0;class#ClientMain#0" expanded="false" />
             <element signature="method#onGroupChat#0;class#ClientMain#0" expanded="false" />
             <element signature="method#sendMessage#0;class#ClientMain#0" expanded="false" />
-            <element signature="e#9852#9854#0" expanded="false" />
+            <element signature="e#11824#11826#0" expanded="false" />
             <element signature="method#goOffline#0;class#ClientMain#0" expanded="false" />
             <element signature="method#connectToServer#0;class#ClientMain#0" expanded="false" />
             <element signature="method#main#0;class#ClientMain#0" expanded="false" />
@@ -748,7 +776,6 @@
         <state relative-caret-position="408">
           <caret line="28" column="36" lean-forward="false" selection-start-line="28" selection-start-column="36" selection-end-line="28" selection-end-column="36" />
           <folding>
-            <element signature="imports" expanded="true" />
             <element signature="e#1379#1394#0" expanded="false" />
           </folding>
         </state>
@@ -758,7 +785,9 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="2227">
           <caret line="148" column="45" lean-forward="true" selection-start-line="148" selection-start-column="45" selection-end-line="148" selection-end-column="45" />
-          <folding />
+          <folding>
+            <element signature="imports" expanded="false" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -768,10 +797,13 @@
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
             <element signature="imports" expanded="true" />
+            <element signature="e#1697#1705#0" expanded="true" />
+            <element signature="e#1770#1778#0" expanded="true" />
             <element signature="method#onLogIn#0;class#ClientMain#0" expanded="false" />
+            <element signature="method#getOnlineUsers#0;class#ClientMain#0" expanded="false" />
             <element signature="method#onGroupChat#0;class#ClientMain#0" expanded="false" />
             <element signature="method#sendMessage#0;class#ClientMain#0" expanded="false" />
-            <element signature="e#9852#9854#0" expanded="false" />
+            <element signature="e#11824#11826#0" expanded="false" />
             <element signature="method#goOffline#0;class#ClientMain#0" expanded="false" />
             <element signature="method#connectToServer#0;class#ClientMain#0" expanded="false" />
             <element signature="method#main#0;class#ClientMain#0" expanded="false" />
@@ -783,7 +815,9 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="1683">
           <caret line="116" column="36" lean-forward="false" selection-start-line="116" selection-start-column="36" selection-end-line="116" selection-end-column="36" />
-          <folding />
+          <folding>
+            <element signature="imports" expanded="false" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -793,10 +827,13 @@
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
             <element signature="imports" expanded="true" />
+            <element signature="e#1697#1705#0" expanded="true" />
+            <element signature="e#1770#1778#0" expanded="true" />
             <element signature="method#onLogIn#0;class#ClientMain#0" expanded="false" />
+            <element signature="method#getOnlineUsers#0;class#ClientMain#0" expanded="false" />
             <element signature="method#onGroupChat#0;class#ClientMain#0" expanded="false" />
             <element signature="method#sendMessage#0;class#ClientMain#0" expanded="false" />
-            <element signature="e#9852#9854#0" expanded="false" />
+            <element signature="e#11824#11826#0" expanded="false" />
             <element signature="method#goOffline#0;class#ClientMain#0" expanded="false" />
             <element signature="method#connectToServer#0;class#ClientMain#0" expanded="false" />
             <element signature="method#main#0;class#ClientMain#0" expanded="false" />
@@ -808,7 +845,9 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="1972">
           <caret line="116" column="36" lean-forward="false" selection-start-line="116" selection-start-column="36" selection-end-line="116" selection-end-column="36" />
-          <folding />
+          <folding>
+            <element signature="imports" expanded="false" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -818,10 +857,13 @@
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
             <element signature="imports" expanded="true" />
+            <element signature="e#1697#1705#0" expanded="true" />
+            <element signature="e#1770#1778#0" expanded="true" />
             <element signature="method#onLogIn#0;class#ClientMain#0" expanded="false" />
+            <element signature="method#getOnlineUsers#0;class#ClientMain#0" expanded="false" />
             <element signature="method#onGroupChat#0;class#ClientMain#0" expanded="false" />
             <element signature="method#sendMessage#0;class#ClientMain#0" expanded="false" />
-            <element signature="e#9852#9854#0" expanded="false" />
+            <element signature="e#11824#11826#0" expanded="false" />
             <element signature="method#goOffline#0;class#ClientMain#0" expanded="false" />
             <element signature="method#connectToServer#0;class#ClientMain#0" expanded="false" />
             <element signature="method#main#0;class#ClientMain#0" expanded="false" />
@@ -833,7 +875,9 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="1683">
           <caret line="116" column="36" lean-forward="false" selection-start-line="116" selection-start-column="36" selection-end-line="116" selection-end-column="36" />
-          <folding />
+          <folding>
+            <element signature="imports" expanded="false" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -843,10 +887,13 @@
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
             <element signature="imports" expanded="true" />
+            <element signature="e#1697#1705#0" expanded="true" />
+            <element signature="e#1770#1778#0" expanded="true" />
             <element signature="method#onLogIn#0;class#ClientMain#0" expanded="false" />
+            <element signature="method#getOnlineUsers#0;class#ClientMain#0" expanded="false" />
             <element signature="method#onGroupChat#0;class#ClientMain#0" expanded="false" />
             <element signature="method#sendMessage#0;class#ClientMain#0" expanded="false" />
-            <element signature="e#9852#9854#0" expanded="false" />
+            <element signature="e#11824#11826#0" expanded="false" />
             <element signature="method#goOffline#0;class#ClientMain#0" expanded="false" />
             <element signature="method#connectToServer#0;class#ClientMain#0" expanded="false" />
             <element signature="method#main#0;class#ClientMain#0" expanded="false" />
@@ -858,7 +905,9 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="1683">
           <caret line="116" column="36" lean-forward="false" selection-start-line="116" selection-start-column="36" selection-end-line="116" selection-end-column="36" />
-          <folding />
+          <folding>
+            <element signature="imports" expanded="false" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -868,10 +917,13 @@
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
             <element signature="imports" expanded="true" />
+            <element signature="e#1697#1705#0" expanded="true" />
+            <element signature="e#1770#1778#0" expanded="true" />
             <element signature="method#onLogIn#0;class#ClientMain#0" expanded="false" />
+            <element signature="method#getOnlineUsers#0;class#ClientMain#0" expanded="false" />
             <element signature="method#onGroupChat#0;class#ClientMain#0" expanded="false" />
             <element signature="method#sendMessage#0;class#ClientMain#0" expanded="false" />
-            <element signature="e#9852#9854#0" expanded="false" />
+            <element signature="e#11824#11826#0" expanded="false" />
             <element signature="method#goOffline#0;class#ClientMain#0" expanded="false" />
             <element signature="method#connectToServer#0;class#ClientMain#0" expanded="false" />
             <element signature="method#main#0;class#ClientMain#0" expanded="false" />
@@ -883,7 +935,9 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="1887">
           <caret line="111" column="30" lean-forward="false" selection-start-line="111" selection-start-column="30" selection-end-line="111" selection-end-column="60" />
-          <folding />
+          <folding>
+            <element signature="imports" expanded="false" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -893,10 +947,13 @@
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
             <element signature="imports" expanded="true" />
+            <element signature="e#1697#1705#0" expanded="true" />
+            <element signature="e#1770#1778#0" expanded="true" />
             <element signature="method#onLogIn#0;class#ClientMain#0" expanded="false" />
+            <element signature="method#getOnlineUsers#0;class#ClientMain#0" expanded="false" />
             <element signature="method#onGroupChat#0;class#ClientMain#0" expanded="false" />
             <element signature="method#sendMessage#0;class#ClientMain#0" expanded="false" />
-            <element signature="e#9852#9854#0" expanded="false" />
+            <element signature="e#11824#11826#0" expanded="false" />
             <element signature="method#goOffline#0;class#ClientMain#0" expanded="false" />
             <element signature="method#connectToServer#0;class#ClientMain#0" expanded="false" />
             <element signature="method#main#0;class#ClientMain#0" expanded="false" />
@@ -908,7 +965,9 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="1598">
           <caret line="111" column="30" lean-forward="false" selection-start-line="111" selection-start-column="30" selection-end-line="111" selection-end-column="60" />
-          <folding />
+          <folding>
+            <element signature="imports" expanded="false" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -918,10 +977,13 @@
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
             <element signature="imports" expanded="true" />
+            <element signature="e#1697#1705#0" expanded="true" />
+            <element signature="e#1770#1778#0" expanded="true" />
             <element signature="method#onLogIn#0;class#ClientMain#0" expanded="false" />
+            <element signature="method#getOnlineUsers#0;class#ClientMain#0" expanded="false" />
             <element signature="method#onGroupChat#0;class#ClientMain#0" expanded="false" />
             <element signature="method#sendMessage#0;class#ClientMain#0" expanded="false" />
-            <element signature="e#9852#9854#0" expanded="false" />
+            <element signature="e#11824#11826#0" expanded="false" />
             <element signature="method#goOffline#0;class#ClientMain#0" expanded="false" />
             <element signature="method#connectToServer#0;class#ClientMain#0" expanded="false" />
             <element signature="method#main#0;class#ClientMain#0" expanded="false" />
@@ -933,7 +995,9 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="1598">
           <caret line="111" column="30" lean-forward="false" selection-start-line="111" selection-start-column="30" selection-end-line="111" selection-end-column="60" />
-          <folding />
+          <folding>
+            <element signature="imports" expanded="false" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -943,10 +1007,13 @@
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
             <element signature="imports" expanded="true" />
+            <element signature="e#1697#1705#0" expanded="true" />
+            <element signature="e#1770#1778#0" expanded="true" />
             <element signature="method#onLogIn#0;class#ClientMain#0" expanded="false" />
+            <element signature="method#getOnlineUsers#0;class#ClientMain#0" expanded="false" />
             <element signature="method#onGroupChat#0;class#ClientMain#0" expanded="false" />
             <element signature="method#sendMessage#0;class#ClientMain#0" expanded="false" />
-            <element signature="e#9852#9854#0" expanded="false" />
+            <element signature="e#11824#11826#0" expanded="false" />
             <element signature="method#goOffline#0;class#ClientMain#0" expanded="false" />
             <element signature="method#connectToServer#0;class#ClientMain#0" expanded="false" />
             <element signature="method#main#0;class#ClientMain#0" expanded="false" />
@@ -958,7 +1025,9 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="1887">
           <caret line="111" column="30" lean-forward="false" selection-start-line="111" selection-start-column="30" selection-end-line="111" selection-end-column="60" />
-          <folding />
+          <folding>
+            <element signature="imports" expanded="false" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -968,10 +1037,13 @@
           <caret line="256" column="27" lean-forward="false" selection-start-line="256" selection-start-column="27" selection-end-line="256" selection-end-column="27" />
           <folding>
             <element signature="imports" expanded="true" />
+            <element signature="e#1697#1705#0" expanded="true" />
+            <element signature="e#1770#1778#0" expanded="true" />
             <element signature="method#onLogIn#0;class#ClientMain#0" expanded="false" />
+            <element signature="method#getOnlineUsers#0;class#ClientMain#0" expanded="false" />
             <element signature="method#onGroupChat#0;class#ClientMain#0" expanded="false" />
             <element signature="method#sendMessage#0;class#ClientMain#0" expanded="false" />
-            <element signature="e#9852#9854#0" expanded="false" />
+            <element signature="e#11824#11826#0" expanded="false" />
             <element signature="method#goOffline#0;class#ClientMain#0" expanded="false" />
             <element signature="method#connectToServer#0;class#ClientMain#0" expanded="false" />
             <element signature="method#main#0;class#ClientMain#0" expanded="false" />
@@ -983,7 +1055,9 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
+          <folding>
+            <element signature="imports" expanded="false" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -993,10 +1067,13 @@
           <caret line="71" column="55" lean-forward="false" selection-start-line="71" selection-start-column="55" selection-end-line="71" selection-end-column="81" />
           <folding>
             <element signature="imports" expanded="true" />
+            <element signature="e#1697#1705#0" expanded="true" />
+            <element signature="e#1770#1778#0" expanded="true" />
             <element signature="method#onLogIn#0;class#ClientMain#0" expanded="false" />
+            <element signature="method#getOnlineUsers#0;class#ClientMain#0" expanded="false" />
             <element signature="method#onGroupChat#0;class#ClientMain#0" expanded="false" />
             <element signature="method#sendMessage#0;class#ClientMain#0" expanded="false" />
-            <element signature="e#9852#9854#0" expanded="false" />
+            <element signature="e#11824#11826#0" expanded="false" />
             <element signature="method#goOffline#0;class#ClientMain#0" expanded="false" />
             <element signature="method#connectToServer#0;class#ClientMain#0" expanded="false" />
             <element signature="method#main#0;class#ClientMain#0" expanded="false" />
@@ -1008,7 +1085,9 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
+          <folding>
+            <element signature="imports" expanded="false" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -1018,10 +1097,13 @@
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
             <element signature="imports" expanded="true" />
+            <element signature="e#1697#1705#0" expanded="true" />
+            <element signature="e#1770#1778#0" expanded="true" />
             <element signature="method#onLogIn#0;class#ClientMain#0" expanded="false" />
+            <element signature="method#getOnlineUsers#0;class#ClientMain#0" expanded="false" />
             <element signature="method#onGroupChat#0;class#ClientMain#0" expanded="false" />
             <element signature="method#sendMessage#0;class#ClientMain#0" expanded="false" />
-            <element signature="e#9852#9854#0" expanded="false" />
+            <element signature="e#11824#11826#0" expanded="false" />
             <element signature="method#goOffline#0;class#ClientMain#0" expanded="false" />
             <element signature="method#connectToServer#0;class#ClientMain#0" expanded="false" />
             <element signature="method#main#0;class#ClientMain#0" expanded="false" />
@@ -1035,10 +1117,13 @@
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
             <element signature="imports" expanded="true" />
+            <element signature="e#1697#1705#0" expanded="true" />
+            <element signature="e#1770#1778#0" expanded="true" />
             <element signature="method#onLogIn#0;class#ClientMain#0" expanded="false" />
+            <element signature="method#getOnlineUsers#0;class#ClientMain#0" expanded="false" />
             <element signature="method#onGroupChat#0;class#ClientMain#0" expanded="false" />
             <element signature="method#sendMessage#0;class#ClientMain#0" expanded="false" />
-            <element signature="e#9852#9854#0" expanded="false" />
+            <element signature="e#11824#11826#0" expanded="false" />
             <element signature="method#goOffline#0;class#ClientMain#0" expanded="false" />
             <element signature="method#connectToServer#0;class#ClientMain#0" expanded="false" />
             <element signature="method#main#0;class#ClientMain#0" expanded="false" />
@@ -1069,10 +1154,9 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/ph/com/aenon/receiveThread.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-143">
-          <caret line="11" column="61" lean-forward="true" selection-start-line="11" selection-start-column="61" selection-end-line="11" selection-end-column="61" />
+        <state relative-caret-position="170">
+          <caret line="11" column="61" lean-forward="false" selection-start-line="11" selection-start-column="61" selection-end-line="11" selection-end-column="61" />
           <folding>
-            <element signature="imports" expanded="true" />
             <element signature="e#1379#1394#0" expanded="false" />
           </folding>
         </state>
@@ -1080,22 +1164,27 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/ph/com/aenon/Chat.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="289">
+        <state relative-caret-position="2023">
           <caret line="141" column="0" lean-forward="false" selection-start-line="141" selection-start-column="0" selection-end-line="145" selection-end-column="42" />
-          <folding />
+          <folding>
+            <element signature="imports" expanded="false" />
+          </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/ph/com/aenon/ClientMain.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="302">
-          <caret line="247" column="49" lean-forward="true" selection-start-line="247" selection-start-column="49" selection-end-line="247" selection-end-column="49" />
+        <state relative-caret-position="683">
+          <caret line="266" column="60" lean-forward="false" selection-start-line="266" selection-start-column="60" selection-end-line="266" selection-end-column="60" />
           <folding>
             <element signature="imports" expanded="true" />
+            <element signature="e#1697#1705#0" expanded="true" />
+            <element signature="e#1770#1778#0" expanded="true" />
             <element signature="method#onLogIn#0;class#ClientMain#0" expanded="false" />
+            <element signature="method#getOnlineUsers#0;class#ClientMain#0" expanded="false" />
             <element signature="method#onGroupChat#0;class#ClientMain#0" expanded="false" />
             <element signature="method#sendMessage#0;class#ClientMain#0" expanded="false" />
-            <element signature="e#9852#9854#0" expanded="false" />
+            <element signature="e#11824#11826#0" expanded="false" />
             <element signature="method#goOffline#0;class#ClientMain#0" expanded="false" />
             <element signature="method#connectToServer#0;class#ClientMain#0" expanded="false" />
             <element signature="method#main#0;class#ClientMain#0" expanded="false" />

@@ -19,6 +19,7 @@ import javafx.stage.WindowEvent;
 
 import java.io.IOException;
 import java.net.*;
+import java.util.ArrayList;
 
 import static javafx.geometry.Pos.*;
 
@@ -53,6 +54,9 @@ public class ClientMain extends Application{
     private static Text message;
 
     private static String receivedSentence;
+
+    private static ArrayList<String> addressList = new ArrayList<String>();
+    private static ArrayList<String> nameList = new ArrayList<String>();
 
     public void start(Stage primaryStage) throws Exception{
         logInScene = new Scene(createLogInContent());
@@ -212,7 +216,9 @@ public class ClientMain extends Application{
         stage.setScene(logInScene);                                 //Set the scene for the Login stage
     }
 
-    public static void onPrivateChat() {
+    public static void onPrivateChat() throws IOException {
+        getOnlineUsers();
+
         StackPane privateScene = new StackPane();
 
         //Set the background image
@@ -232,7 +238,9 @@ public class ClientMain extends Application{
         gridPane.add(text, 0, 0);
 
         ComboBox onlineUsers = new ComboBox();
-        //onlineUsers.getItems().add("Aenondddddddddsdsdsddddd");
+        for (int i = 0; i < nameList.size(); i++){
+            onlineUsers.getItems().add(nameList.get(i));
+        }
         onlineUsers.setValue("Select a user");
         onlineUsers.setMaxWidth(250);
         gridPane.add(onlineUsers, 1, 0);
@@ -256,6 +264,50 @@ public class ClientMain extends Application{
         privateStage.show();
     }
 
+    private static void getOnlineUsers() throws IOException {
+        String toSend = "rqstList132.*0";
+        sendData = new byte[1024];
+        sendData = toSend.getBytes();
+        sendPacket = new DatagramPacket(sendData, sendData.length, IPAddress, portNumber);
+        clientSocket.send(sendPacket);
+
+        receiveData = new byte[1024];
+        receivePacket = new DatagramPacket(receiveData, receiveData.length);
+        clientSocket.receive(receivePacket);
+        receivedSentence = new String(receivePacket.getData(), 0, receivePacket.getLength());
+
+        String temp = "";
+        boolean flag = false;
+
+        for (int c = 0; c < receivedSentence.length(); c++){
+            if (!flag){
+                if (receivedSentence.charAt(c) != ';' && receivedSentence.charAt(c) != '|'){
+                    temp = temp + receivedSentence.charAt(c);
+                }
+
+                if (receivedSentence.charAt(c) == ';'){
+                    addressList.add(temp);
+                    temp = "";
+                }else if (receivedSentence.charAt(c) == '|'){
+                    addressList.add(temp);
+                    temp = "";
+                    flag = true;
+                }
+            }else{
+                if (receivedSentence.charAt(c) != ';' && receivedSentence.charAt(c) != '|'){
+                    temp = temp + receivedSentence.charAt(c);
+                }
+
+                if (receivedSentence.charAt(c) == ';'){
+                    nameList.add(temp);
+                    temp = "";
+                }else if (c == receivedSentence.length()-1){
+                    nameList.add(temp);
+                    temp = "";
+                }
+            }
+        }
+    }
 
     public static void onGroupChat() throws Exception {
         receiveThread thread = new receiveThread();

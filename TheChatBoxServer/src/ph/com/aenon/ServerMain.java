@@ -26,6 +26,7 @@ public class ServerMain {
         String preCode = new String(".,paSs,#");
         String codeOnline = new String("ok");
         String codeOffline = new String("OFFLINE321.*");
+        String codeList = new String("rqstList132.*0");
 
         while(true){
             byte[] receiveData = new byte[1024];
@@ -155,6 +156,31 @@ public class ServerMain {
                     System.out.println("Current adresses: " + addressList);
                     System.out.println("Current users: " + nameList);
                 }
+            //Send online user's lists
+            } else if (sentence.equals(codeList)) {
+                System.out.println("Requesting for user list");
+
+                String toSend = "";
+                for (int c = 0; c < addressList.size(); c++){
+                    toSend = toSend + addressList.get(c);
+
+                    if (c < addressList.size()-1) {
+                        toSend = toSend + ";";
+                    }
+                }
+                toSend = toSend + "|";
+                for (int c = 0; c < nameList.size(); c++){
+                    toSend = toSend + nameList.get(c);
+
+                    if (c < addressList.size()-1) {
+                        toSend = toSend + ";";
+                    }
+                }
+                System.out.println(toSend);
+                sendData = toSend.getBytes();
+
+                sendPacket = new DatagramPacket(sendData, sendData.length, IPAddress, port);
+                serverSocket.send(sendPacket);
             //If client is sending a message
             } else{
                 boolean flag = false;
