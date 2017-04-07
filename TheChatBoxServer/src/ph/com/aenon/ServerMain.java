@@ -158,8 +158,6 @@ public class ServerMain {
                 }
             //Send online user's lists
             } else if (sentence.equals(codeList)) {
-                System.out.println("Requesting for user list");
-
                 String toSend = "";
                 for (int c = 0; c < addressList.size(); c++){
                     toSend = toSend + addressList.get(c);

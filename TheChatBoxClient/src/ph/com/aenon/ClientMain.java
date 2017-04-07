@@ -232,7 +232,7 @@ public class ClientMain extends Application{
         gridPane.setTranslateX(0);
         gridPane.setTranslateY(10);
 
-        Label text = new Label("GroupChat with ");
+        Label text = new Label(name + "! Chat with ");
         text.setFont(Font.font("Arial Rounded MT Bold", FontWeight.NORMAL, 20));
         text.setTextFill(Color.WHITE);
         gridPane.add(text, 0, 0);
@@ -264,16 +264,21 @@ public class ClientMain extends Application{
         privateStage.show();
 
         goBtn.setOnAction(event -> {
-            PrivateChat privatechat = new PrivateChat();
-            privateStage.setTitle("The ChatBox (Client): PrivateChat");
-            privateStage.setScene(
-                    new Scene(privatechat.main(), displayWidth, displayHeight)
-            );
+            if (!onlineUsers.getValue().toString().equals("Select a user") && !onlineUsers.getValue().toString().equals(name)){
+                PrivateChat privatechat = new PrivateChat(onlineUsers.getValue().toString());
+                privateStage.setTitle("The ChatBox (Client): PrivateChat");
+                privateStage.setScene(
+                        new Scene(privatechat.main(), displayWidth, displayHeight)
+                );
+            }
         });
 
     }
 
     private static void getOnlineUsers() throws IOException {
+        nameList.clear();
+        addressList.clear();
+
         String toSend = "rqstList132.*0";
         sendData = new byte[1024];
         sendData = toSend.getBytes();

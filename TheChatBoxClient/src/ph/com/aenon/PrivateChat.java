@@ -26,10 +26,15 @@ public class PrivateChat {
     private static double displayWidth = 400;
     private static double displayHeight = 500;
 
+    private static String friend;
     private static TextField message;
     public static String msg;
 
     public static TextArea convoMessage;
+
+    public PrivateChat(String friend) {
+        this.friend = friend;
+    }
 
     public Parent main(){
         Pane rootNode = new Pane();
@@ -69,17 +74,7 @@ public class PrivateChat {
         HBox hbBtn1 = new HBox(4);
         hbBtn1.setAlignment(Pos.TOP_CENTER);
         hbBtn1.getChildren().add(logOutBtn);
-        gridButton.add(hbBtn1, 0, 0);
-
-        //Create Private Button
-        Button privateBtn = new Button("Private");
-        privateBtn.setTooltip(
-                new Tooltip("Enter Private GroupChat Room")
-        );
-        HBox hbBtn2 = new HBox(4);
-        hbBtn2.setAlignment(Pos.TOP_CENTER);
-        hbBtn2.getChildren().add(privateBtn);
-        gridButton.add(hbBtn2, 1, 0);
+        gridButton.add(hbBtn1, 1, 0);
 
         gridTitle.setTranslateX(0);
         gridTitle.setTranslateY(120);
@@ -91,22 +86,13 @@ public class PrivateChat {
             ClientMain.onLogIn();
         });
 
-        privateBtn.setOnAction(event -> {
-            //open another window to establish private communication with another client
-            try {
-                ClientMain.onPrivateChat();
-            } catch (Exception e) {
-                e.printStackTrace();
-            }
-        });
-
         //Set the conversation gridPane's properties
         GridPane gridConvo = new GridPane();
         gridConvo.setAlignment(BASELINE_LEFT);
         //gridTitle.setGridLinesVisible(true);
 
         //Create Text Area for conversation
-        convoMessage = new TextArea("Start a conversation!");
+        convoMessage = new TextArea("Start a conversation with " + friend + "!");
         convoMessage.setFont(Font.font("Arial", FontWeight.NORMAL, 12));
         convoMessage.setWrapText(true);
         convoMessage.setEditable(false);
