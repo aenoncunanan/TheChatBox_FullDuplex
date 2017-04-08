@@ -80,7 +80,7 @@ public class GroupChat {
         //Create Private Button
         Button privateBtn = new Button("Private");
         privateBtn.setTooltip(
-                new Tooltip("Enter Private GroupChat Room")
+                new Tooltip("Enter Private Chat Room")
         );
         HBox hbBtn2 = new HBox(4);
         hbBtn2.setAlignment(Pos.TOP_CENTER);

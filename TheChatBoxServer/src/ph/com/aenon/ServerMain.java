@@ -27,6 +27,11 @@ public class ServerMain {
         String codeOnline = new String("ok");
         String codeOffline = new String("OFFLINE321.*");
         String codeList = new String("rqstList132.*0");
+        String codePrivate = new String("prvtmsg.*^");
+        boolean msgIsPrivate = false;
+
+        String addressToChat = "";
+        String messageToSend = "";
 
         while(true){
             byte[] receiveData = new byte[1024];
@@ -49,6 +54,12 @@ public class ServerMain {
             int offset = 0;
             for (offset = 0; offset < codeOffline.length() && sentence.length() >= codeOffline.length(); offset++){
                 offline = offline + sentence.charAt(offset);
+            }
+
+            String privateRqst = "";
+            int privateOffset = 0;
+            for (privateOffset = 0; privateOffset < codePrivate.length() && sentence.length() >= codePrivate.length(); privateOffset++){
+                privateRqst = privateRqst + sentence.charAt(privateOffset);
             }
 
             //Check if client is connecting
@@ -174,19 +185,47 @@ public class ServerMain {
                         toSend = toSend + ";";
                     }
                 }
-                System.out.println(toSend);
+                System.out.println("");
+                System.out.println("Requesting for online list: " + toSend);
                 sendData = toSend.getBytes();
 
                 sendPacket = new DatagramPacket(sendData, sendData.length, IPAddress, port);
                 serverSocket.send(sendPacket);
-            //If client is sending a message
+            //If client is sending a private message
+            } else if (privateRqst.equals(codePrivate)){
+                String useraddress = "";
+                String message = "";
+                boolean done = false;
+                for (int i = privateOffset+1; i < sentence.length(); i++){
+                    if (!done){
+                        if (sentence.charAt(i) != ';'){
+                            useraddress = useraddress + sentence.charAt(i);
+                        }
+                        if (sentence.charAt(i) == ';'){
+                            done = true;
+                        }
+                    }else if (done){
+                        if (i < sentence.length()){
+                            message = message + sentence.charAt(i);
+                        }
+                    }
+                }
+                System.out.println("userAddress: " + useraddress);
+                System.out.println("message: " + message);
+
+                sendData = message.getBytes();
+
+                sendPacket = new DatagramPacket(sendData, sendData.length, InetAddress.getByName(useraddress), port);
+                serverSocket.send(sendPacket);
+
+            //If client is sending a group message
             } else{
                 boolean flag = false;
                 int c;
 
                 for (c = 0; c < addressList.size() && !flag; c++){
                     if (IPAddress.toString().split("/")[1].equals(addressList.get(c))) {
-                            flag = true;
+                        flag = true;
                     }
                 }
 

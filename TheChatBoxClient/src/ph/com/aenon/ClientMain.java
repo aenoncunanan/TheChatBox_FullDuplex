@@ -265,11 +265,42 @@ public class ClientMain extends Application{
 
         goBtn.setOnAction(event -> {
             if (!onlineUsers.getValue().toString().equals("Select a user") && !onlineUsers.getValue().toString().equals(name)){
-                PrivateChat privatechat = new PrivateChat(onlineUsers.getValue().toString());
+                //Get the userToChat's ip address
+                String userToChat = onlineUsers.getValue().toString();
+                String addressToChat = "";
+
+                boolean flag = false;
+                int c;
+
+                for (c = 0; c < nameList.size() && !flag; c++){
+                    if (userToChat.equals(nameList.get(c))){
+                        flag = true;
+                    }
+                }
+
+                if (flag){
+                    if(c == 1){
+                        addressToChat = addressList.get(0);
+                    }else if (c < nameList.size() || c == nameList.size() || c > nameList.size()){
+                        addressToChat = addressList.get(c-1);
+                    }
+                }
+                //End of getting the userToChat's ip address
+
+                String toChat = userToChat + ";" + addressToChat;
+
+                PrivateChat privatechat = new PrivateChat(toChat);
                 privateStage.setTitle("The ChatBox (Client): PrivateChat");
                 privateStage.setScene(
                         new Scene(privatechat.main(), displayWidth, displayHeight)
                 );
+                privateReceiveThread privateReceiveThread = null;
+                try {
+                    privateReceiveThread = new privateReceiveThread();
+                } catch (SocketException e) {
+                    e.printStackTrace();
+                }
+                privateReceiveThread.start();
             }
         });
 
@@ -324,7 +355,7 @@ public class ClientMain extends Application{
     }
 
     public static void onGroupChat() throws Exception {
-        receiveThread thread = new receiveThread();
+        groupReceiveThread thread = new groupReceiveThread();
         thread.start();
 
         GroupChat groupchat = new GroupChat();
@@ -348,20 +379,14 @@ public class ClientMain extends Application{
         sendData = GroupChat.msg.getBytes();
         sendPacket = new DatagramPacket(sendData, sendData.length, IPAddress, portNumber);
         clientSocket.send(sendPacket);
-
-        //receiveMessage();
     }
-//
-//    public static void receiveMessage()throws Exception{
-//        receiveData = new byte[1024];
-//        receivePacket = new DatagramPacket(receiveData, receiveData.length);
-//        clientSocket.receive(receivePacket);
-//
-//        String received = new String(receivePacket.getData());
-//        System.out.println(received);
-//
-//        GroupChat.convoMessage.appendText("\n" + received);
-//    }
+
+    public static void sendPrivateMessage(String toSend)throws Exception{
+        sendData = new byte[1024];
+        sendData = toSend.getBytes();
+        sendPacket = new DatagramPacket(sendData, sendData.length, IPAddress, portNumber);
+        clientSocket.send(sendPacket);
+    }
 
     public static void goOffline()throws Exception{
         String toSend = codeOffline + name;
@@ -371,7 +396,7 @@ public class ClientMain extends Application{
         clientSocket.send(sendPacket);
 
         clientSocket.close();
-        receiveThread.isConnected = false;
+        groupReceiveThread.isConnected = false;
     }
 
     public static void connectToServer() throws Exception{

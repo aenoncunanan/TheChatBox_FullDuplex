@@ -26,14 +26,38 @@ public class PrivateChat {
     private static double displayWidth = 400;
     private static double displayHeight = 500;
 
-    private static String friend;
+    private static String userToChat;
+    private static String addressToChat;
     private static TextField message;
     public static String msg;
 
     public static TextArea convoMessage;
 
-    public PrivateChat(String friend) {
-        this.friend = friend;
+    public PrivateChat(String toChat) {
+        boolean flag = false;
+        String temp = "";
+        for (int i = 0; i < toChat.length(); i++){
+            if (toChat.charAt(i) != ';' && !flag){
+                temp = temp + toChat.charAt(i);
+            }
+
+            if (toChat.charAt(i) == ';'){
+                flag = true;
+                userToChat = temp;
+                temp = "";
+            }
+
+            if (flag){
+                if (toChat.charAt(i) != ';'){
+                    temp = temp + toChat.charAt(i);
+                }
+
+                if (i == toChat.length()-1){
+                    addressToChat = temp;
+                }
+            }
+
+        }
     }
 
     public Parent main(){
@@ -92,7 +116,7 @@ public class PrivateChat {
         //gridTitle.setGridLinesVisible(true);
 
         //Create Text Area for conversation
-        convoMessage = new TextArea("Start a conversation with " + friend + "!");
+        convoMessage = new TextArea("Start a conversation with " + userToChat + "!");
         convoMessage.setFont(Font.font("Arial", FontWeight.NORMAL, 12));
         convoMessage.setWrapText(true);
         convoMessage.setEditable(false);
@@ -134,9 +158,9 @@ public class PrivateChat {
 
         sendBtn.setOnAction(event -> {
             if (!message.getText().isEmpty()){
-                msg = message.getText();
+                String toSend = "prvtmsg.*^" + ";" + addressToChat + ";" + message.getText();
                 try {
-                    ClientMain.sendMessage();
+                    ClientMain.sendPrivateMessage(toSend);
                 } catch (Exception e) {}
             }
             message.clear();

@@ -6,7 +6,7 @@ import java.net.*;
 /**
  * Created by aenon on 02/04/2017.
  */
-public class receiveThread extends Thread{
+public class groupReceiveThread extends Thread{
 
     MulticastSocket socket = new MulticastSocket(4446);
     InetAddress address = InetAddress.getByName("230.0.0.1");
@@ -15,7 +15,7 @@ public class receiveThread extends Thread{
 
     public static boolean isConnected;
 
-    public receiveThread() throws IOException {
+    public groupReceiveThread() throws IOException {
         socket.joinGroup(address);
         isConnected = true;
     }
