@@ -12,13 +12,16 @@ import java.net.SocketException;
 public class privateReceiveThread extends Thread {
 
     DatagramPacket receivePacket;
-    DatagramSocket clientSocket = new DatagramSocket(9876);
+    DatagramSocket clientSocket;
 
-    byte[] receiveData = new byte[1024];
+    byte[] receiveData;
 
     String receivedSentence = "";
 
-    public privateReceiveThread() throws SocketException {
+    public privateReceiveThread(DatagramPacket receivePacket, DatagramSocket clientSocket, byte[] receiveData) throws SocketException {
+        this.receivePacket = receivePacket;
+        this.clientSocket = clientSocket;
+        this.receiveData = receiveData;
     }
 
     public void run(){
@@ -26,16 +29,15 @@ public class privateReceiveThread extends Thread {
             receiveData = new byte[1024];
             receivePacket = new DatagramPacket(receiveData, receiveData.length);
 
-            InetAddress IPAddress = receivePacket.getAddress();
-            int port = receivePacket.getPort();
-
             try {
                 clientSocket.receive(receivePacket);
+                receivedSentence = new String(receivePacket.getData(), 0, receivePacket.getLength());
+                System.out.println(receivedSentence);
+                PrivateChat.convoMessage.appendText("\n" + receivedSentence);
             } catch (IOException e) {
-                e.printStackTrace();
+                //e.printStackTrace();
+                System.out.println("Didn't get anything!");
             }
-            receivedSentence = new String(receivePacket.getData(), 0, receivePacket.getLength());
-            System.out.println(receivedSentence);
         }
     }
 

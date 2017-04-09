@@ -287,6 +287,14 @@ public class ClientMain extends Application{
                 }
                 //End of getting the userToChat's ip address
 
+                privateReceiveThread privateReceiveThread = null;
+                try {
+                    privateReceiveThread = new privateReceiveThread(receivePacket, clientSocket, receiveData);
+                } catch (SocketException e) {
+                    e.printStackTrace();
+                }
+                privateReceiveThread.start();
+
                 String toChat = userToChat + ";" + addressToChat;
 
                 PrivateChat privatechat = new PrivateChat(toChat);
@@ -294,13 +302,6 @@ public class ClientMain extends Application{
                 privateStage.setScene(
                         new Scene(privatechat.main(), displayWidth, displayHeight)
                 );
-                privateReceiveThread privateReceiveThread = null;
-                try {
-                    privateReceiveThread = new privateReceiveThread();
-                } catch (SocketException e) {
-                    e.printStackTrace();
-                }
-                privateReceiveThread.start();
             }
         });
 
