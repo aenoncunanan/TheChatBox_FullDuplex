@@ -62,10 +62,10 @@ public class ServerMain {
                 privateRqst = privateRqst + sentence.charAt(privateOffset);
             }
 
-            //Check if client is connecting
+            //If client is connecting
             if (checkCode.equals(preCode)){
                 clientConnecting(preCode, codeOnline, receiveData, IPAddress, port, sentence);
-            //Check if client is disconnecting
+            //If client is disconnecting
             }else if (offline.equals(codeOffline)){
                 clientDisconnecting(IPAddress.toString().split("/")[1], sentence, offset);
             //Send online user's lists
@@ -82,29 +82,114 @@ public class ServerMain {
         }
     }
 
-    private static void clientSendingGroupMsg(String IPAddress, String sentence) throws IOException {
+    private static void clientConnecting(String preCode, String codeOnline, byte[] receiveData, InetAddress IPAddress, int port, String sentence) throws IOException {
+        if (sentence.equals(preCode + codeOnline)){
+            String toSend = "prematched!";
+
+            sendMessage(toSend, IPAddress, port);
+
+            receivePacket = new DatagramPacket(receiveData, receiveData.length);
+            serverSocket.receive(receivePacket);
+
+            String clientName = new String(receivePacket.getData(), 0, receivePacket.getLength());
+            boolean flag = false;
+            int c = 0;
+
+            for (c = 0; c < nameList.size() && !flag; c++){
+                if (clientName.equals(nameList.get(c))) {
+                    flag = true;
+                }
+            }
+
+            if (!flag){
+                addressList.add(IPAddress.toString().split("/")[1]);
+                nameList.add(clientName);
+                System.out.println("");
+                System.out.println(clientName + "(" + IPAddress.toString().split("/")[1] + ")" + " goes online!");
+                System.out.println("Current address/es: " + addressList);
+                System.out.println("Current user/s: " + nameList);
+
+                toSend = "matched!";
+                sendMessage(toSend, IPAddress, port);
+
+                toSend = clientName + " goes online!";
+                sendMessage(toSend, groupAddress, groupPort);
+
+            }else if (flag){
+                toSend = "mismatched!";
+                sendMessage(toSend, IPAddress, port);
+            }
+        }else{
+            String toSend = "mismatched!";
+            sendMessage(toSend, IPAddress, port);
+        }
+    }
+
+    private static void clientDisconnecting(String IPAddress, String sentence, int offset) throws IOException {
+        String name = "";
+        for (int i = offset; i < sentence.length(); i++){
+            name = name + sentence.charAt(i);
+        }
+
         boolean flag = false;
         int c;
 
         for (c = 0; c < addressList.size() && !flag; c++){
             if (IPAddress.equals(addressList.get(c))) {
-                flag = true;
+                if (name.equals(nameList.get(c))){
+                    flag = true;
+                }
             }
         }
-
-        String toSend = "";
 
         if (flag){
+            System.out.println("\nCurrent adresses: " + addressList);
+            System.out.println("Current users: " + nameList);
+
             if(c == 1){
-                System.out.println(nameList.get(0) + "(" + addressList.get(0) + "): " + sentence);
-                toSend = nameList.get(0) + ": " + sentence;
+                System.out.println(nameList.get(0) + "(" + addressList.get(0) + ")" + " went offline!");
+                String toSend = nameList.get(0) + " went offline!";
+
+                sendMessage(toSend, groupAddress, groupPort);
+
+                nameList.remove(0);
+                addressList.remove(0);
             }else if (c < nameList.size() || c == nameList.size() || c > nameList.size()){
-                System.out.println(nameList.get(c-1) + "(" + addressList.get(c-1) + "): " + sentence);
-                toSend = nameList.get(c-1) + ": " + sentence;
+                System.out.println(nameList.get(c-1) + "(" + addressList.get(c-1) + ")" + " went offline!");
+                String toSend = nameList.get(c-1) + " went offline!";
+
+                sendMessage(toSend, groupAddress, groupPort);
+
+                nameList.remove(c-1);
+                addressList.remove(c-1);
+            }
+
+            System.out.println("Current adresses: " + addressList);
+            System.out.println("Current users: " + nameList);
+        }
+    }
+
+    private static void clientGoingPrivate(InetAddress IPAddress, int port) throws IOException {
+        String toSend = "";
+        for (int c = 0; c < addressList.size(); c++){
+            toSend = toSend + addressList.get(c);
+
+            if (c < addressList.size()-1) {
+                toSend = toSend + ";";
             }
         }
+        toSend = toSend + "|";
+        for (int c = 0; c < nameList.size(); c++){
+            toSend = toSend + nameList.get(c);
 
-        sendMessage(toSend, groupAddress, groupPort);
+            if (c < addressList.size()-1) {
+                toSend = toSend + ";";
+            }
+        }
+        System.out.println("");
+        System.out.println("Requesting for online list: " + toSend);
+
+        sendMessage(toSend, IPAddress, port);
     }
 
     private static void clientSendingPrivateMsg(int port, String sentence, int privateOffset) throws IOException {
@@ -148,138 +233,31 @@ public class ServerMain {
         sendMessage(message, InetAddress.getByName(useraddress), port);
     }
 
-    private static void clientGoingPrivate(InetAddress IPAddress, int port) throws IOException {
-        byte[] sendData;
-        String toSend = "";
-        for (int c = 0; c < addressList.size(); c++){
-            toSend = toSend + addressList.get(c);
-
-            if (c < addressList.size()-1) {
-                toSend = toSend + ";";
-            }
-        }
-        toSend = toSend + "|";
-        for (int c = 0; c < nameList.size(); c++){
-            toSend = toSend + nameList.get(c);
-
-            if (c < addressList.size()-1) {
-                toSend = toSend + ";";
-            }
-        }
-        System.out.println("");
-        System.out.println("Requesting for online list: " + toSend);
-        sendData = toSend.getBytes();
-
-        sendPacket = new DatagramPacket(sendData, sendData.length, IPAddress, port);
-        serverSocket.send(sendPacket);
-    }
-
-    private static void clientDisconnecting(String IPAddress, String sentence, int offset) throws IOException {
-        byte[] sendData;
-        String name = "";
-        for (int i = offset; i < sentence.length(); i++){
-            name = name + sentence.charAt(i);
-        }
-
+    private static void clientSendingGroupMsg(String IPAddress, String sentence) throws IOException {
         boolean flag = false;
         int c;
 
         for (c = 0; c < addressList.size() && !flag; c++){
             if (IPAddress.equals(addressList.get(c))) {
-                if (name.equals(nameList.get(c))){
-                    flag = true;
-                }
+                flag = true;
             }
         }
+
+        String toSend = "";
 
         if (flag){
-            System.out.println("\nCurrent adresses: " + addressList);
-            System.out.println("Current users: " + nameList);
-
             if(c == 1){
-                System.out.println(nameList.get(0) + "(" + addressList.get(0) + ")" + " went offline!");
-                String toSend = nameList.get(0) + " went offline!";
-
-                sendData = toSend.getBytes();
-
-                sendPacket = new DatagramPacket(sendData, sendData.length, groupAddress, groupPort);
-                serverSocket.send(sendPacket);
-
-                nameList.remove(0);
-                addressList.remove(0);
-            }else if (c < nameList.size() || c == nameList.size() || c > nameList.size()){
-                System.out.println(nameList.get(c-1) + "(" + addressList.get(c-1) + ")" + " went offline!");
-                String toSend = nameList.get(c-1) + " went offline!";
-
-                sendData = toSend.getBytes();
-
-                sendPacket = new DatagramPacket(sendData, sendData.length, groupAddress, groupPort);
-                serverSocket.send(sendPacket);
-
-                nameList.remove(c-1);
-                addressList.remove(c-1);
-            }
-
-            System.out.println("Current adresses: " + addressList);
-            System.out.println("Current users: " + nameList);
-        }
-    }
-
-    private static void clientConnecting(String preCode, String codeOnline, byte[] receiveData, InetAddress IPAddress, int port, String sentence) throws IOException {
-        byte[] sendData;
-        if (sentence.equals(preCode + codeOnline)){
-            String toSend = "prematched!";
-            sendData = toSend.getBytes();
-
-            sendPacket = new DatagramPacket(sendData, sendData.length, IPAddress, port);
-            serverSocket.send(sendPacket);
-
-            receivePacket = new DatagramPacket(receiveData, receiveData.length);
-            serverSocket.receive(receivePacket);
-
-            String clientName = new String(receivePacket.getData(), 0, receivePacket.getLength());
-            boolean flag = false;
-            int c = 0;
-
-            for (c = 0; c < nameList.size() && !flag; c++){
-                if (clientName.equals(nameList.get(c))) {
-                    flag = true;
-                }
-            }
-
-            if (!flag){
-                addressList.add(IPAddress.toString().split("/")[1]);
-                System.out.println(addressList);
-                nameList.add(clientName);
                 System.out.println("");
-                System.out.println(clientName + "(" + IPAddress.toString().split("/")[1] + ")" + " goes online!");
-
-                toSend = "matched!";
-                sendData = toSend.getBytes();
-
-                sendPacket = new DatagramPacket(sendData, sendData.length, IPAddress, port);
-                serverSocket.send(sendPacket);
-
-                toSend = clientName + " goes online!";
-                sendData = toSend.getBytes();
-
-                sendPacket = new DatagramPacket(sendData, sendData.length, groupAddress, groupPort);
-                serverSocket.send(sendPacket);
-
-            }else if (flag){
-                toSend = "mismatched!";
-                sendData = toSend.getBytes();
-
-                sendPacket = new DatagramPacket(sendData, sendData.length, IPAddress, port);
-                serverSocket.send(sendPacket);
+                System.out.println(nameList.get(0) + "(" + addressList.get(0) + "): " + sentence);
+                toSend = nameList.get(0) + ": " + sentence;
+            }else if (c < nameList.size() || c == nameList.size() || c > nameList.size()){
+                System.out.println("");
+                System.out.println(nameList.get(c-1) + "(" + addressList.get(c-1) + "): " + sentence);
+                toSend = nameList.get(c-1) + ": " + sentence;
             }
-        }else{
-            String toSend = "mismatched!";
-            sendData = toSend.getBytes();
-
-            sendPacket = new DatagramPacket(sendData, sendData.length, IPAddress, port);
-            serverSocket.send(sendPacket);
         }
+
+        sendMessage(toSend, groupAddress, groupPort);
     }
 
     private static void sendMessage(String message, InetAddress IPAddress, int port) throws IOException {
