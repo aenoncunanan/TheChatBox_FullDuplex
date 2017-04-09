@@ -1,8 +1,10 @@
 package ph.com.aenon;
 
+import javafx.application.Platform;
 import javafx.geometry.Insets;
 import javafx.geometry.Pos;
 import javafx.scene.Parent;
+import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.control.TextArea;
 import javafx.scene.control.TextField;
@@ -15,6 +17,7 @@ import javafx.scene.paint.Color;
 import javafx.scene.text.Font;
 import javafx.scene.text.FontWeight;
 import javafx.scene.text.Text;
+import javafx.stage.Stage;
 
 import static javafx.geometry.Pos.BASELINE_LEFT;
 import static javafx.geometry.Pos.CENTER;
@@ -107,6 +110,8 @@ public class PrivateChat {
         gridButton.setTranslateY(115);
 
         logOutBtn.setOnAction(event -> {
+            privateReceiveThread.isConnected = false;
+            ClientMain.privateStage.close();
             ClientMain.onLogIn();
         });
 
@@ -160,7 +165,7 @@ public class PrivateChat {
             if (!message.getText().isEmpty()){
                 String toSend = "prvtmsg.*^" + ";" + addressToChat + ";" + message.getText();
                 try {
-                    ClientMain.sendPrivateMessage(toSend);
+                    ClientMain.sendMessage(toSend);
                 } catch (Exception e) {}
             }
             message.clear();

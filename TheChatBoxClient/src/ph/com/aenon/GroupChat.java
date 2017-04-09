@@ -33,7 +33,6 @@ public class GroupChat {
     private static double displayHeight = 500;
 
     private static TextField message;
-    public static String msg;
 
     public static TextArea convoMessage;
 
@@ -154,9 +153,9 @@ public class GroupChat {
 
         sendBtn.setOnAction(event -> {
             if (!message.getText().isEmpty()){
-                msg = message.getText();
+                String toSend = message.getText();
                 try {
-                    ClientMain.sendMessage();
+                    ClientMain.sendMessage(toSend);
                 } catch (Exception e) {}
             }
             message.clear();

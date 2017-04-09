@@ -18,6 +18,8 @@ public class privateReceiveThread extends Thread {
 
     String receivedSentence = "";
 
+    public static boolean isConnected = true;
+
     public privateReceiveThread(DatagramPacket receivePacket, DatagramSocket clientSocket, byte[] receiveData) throws SocketException {
         this.receivePacket = receivePacket;
         this.clientSocket = clientSocket;
@@ -25,7 +27,7 @@ public class privateReceiveThread extends Thread {
     }
 
     public void run(){
-        while (true){
+        while (isConnected){
             receiveData = new byte[1024];
             receivePacket = new DatagramPacket(receiveData, receiveData.length);
 
@@ -37,6 +39,12 @@ public class privateReceiveThread extends Thread {
             } catch (IOException e) {
                 //e.printStackTrace();
                 System.out.println("Didn't get anything!");
+            }
+
+            if (!isConnected){
+                clientSocket.close();
+                System.out.println("Private Socket Closed!");
+                break;
             }
         }
     }

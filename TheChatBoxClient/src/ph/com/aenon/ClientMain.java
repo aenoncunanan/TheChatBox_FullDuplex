@@ -46,7 +46,9 @@ public class ClientMain extends Application{
     private static String serverPassword = "";
     private static String codeOffline = "OFFLINE321.*";
 
-    private static boolean flag = false;
+    private static boolean connectedToServer = false;
+
+    public static Stage privateStage = new Stage();
 
     private static TextField user;
     private static PasswordField pass;
@@ -181,7 +183,7 @@ public class ClientMain extends Application{
                 try {
                     connectToServer();
 
-                    if (flag){
+                    if (connectedToServer){
                         onGroupChat();
                     }else{
                         message.setText(
@@ -216,7 +218,7 @@ public class ClientMain extends Application{
         stage.setScene(logInScene);                                 //Set the scene for the Login stage
     }
 
-    public static void onPrivateChat() throws IOException {
+    public static void onPrivateChat() throws Exception {
         getOnlineUsers();
 
         StackPane privateScene = new StackPane();
@@ -257,7 +259,6 @@ public class ClientMain extends Application{
 
         Scene privateWindow = new Scene(privateScene, displayWidth, displayHeight);
 
-        Stage privateStage = new Stage();
         privateStage.setTitle("The ChatBox (Client): PrivateChat");
         privateStage.setScene(privateWindow);
         privateStage.setResizable(false);
@@ -302,20 +303,26 @@ public class ClientMain extends Application{
                 privateStage.setScene(
                         new Scene(privatechat.main(), displayWidth, displayHeight)
                 );
+
+                privateStage.setOnCloseRequest(new EventHandler<WindowEvent>() {
+                    @Override
+                    public void handle(WindowEvent event) {
+                        ph.com.aenon.privateReceiveThread.isConnected = false;
+                        Platform.exit();
+                    }
+                });
+
             }
         });
 
     }
 
-    private static void getOnlineUsers() throws IOException {
+    private static void getOnlineUsers() throws Exception {
         nameList.clear();
         addressList.clear();
 
         String toSend = "rqstList132.*0";
-        sendData = new byte[1024];
-        sendData = toSend.getBytes();
-        sendPacket = new DatagramPacket(sendData, sendData.length, IPAddress, portNumber);
-        clientSocket.send(sendPacket);
+        sendMessage(toSend);
 
         receiveData = new byte[1024];
         receivePacket = new DatagramPacket(receiveData, receiveData.length);
@@ -375,14 +382,7 @@ public class ClientMain extends Application{
         });
     }
 
-    public static void sendMessage()throws Exception{
-        sendData = new byte[1024];
-        sendData = GroupChat.msg.getBytes();
-        sendPacket = new DatagramPacket(sendData, sendData.length, IPAddress, portNumber);
-        clientSocket.send(sendPacket);
-    }
-
-    public static void sendPrivateMessage(String toSend)throws Exception{
+    public static void sendMessage(String toSend)throws Exception{
         sendData = new byte[1024];
         sendData = toSend.getBytes();
         sendPacket = new DatagramPacket(sendData, sendData.length, IPAddress, portNumber);
@@ -391,10 +391,7 @@ public class ClientMain extends Application{
 
     public static void goOffline()throws Exception{
         String toSend = codeOffline + name;
-        sendData = toSend.getBytes();
-
-        sendPacket = new DatagramPacket(sendData, sendData.length, IPAddress, portNumber);
-        clientSocket.send(sendPacket);
+        sendMessage(toSend);
 
         clientSocket.close();
         groupReceiveThread.isConnected = false;
@@ -404,11 +401,8 @@ public class ClientMain extends Application{
         clientSocket = new DatagramSocket();
         IPAddress = InetAddress.getByName(ServerIP);
 
-        sendData = new byte[1024];
         String toSend = ".,paSs,#" + serverPassword;
-        sendData = toSend.getBytes();
-        sendPacket = new DatagramPacket(sendData, sendData.length, IPAddress, portNumber);
-        clientSocket.send(sendPacket);
+        sendMessage(toSend);
 
         clientSocket.setSoTimeout(2000); //to stop listening to a wrong IP Address
         receiveData = new byte[1024];
@@ -417,11 +411,8 @@ public class ClientMain extends Application{
         receivedSentence = new String(receivePacket.getData(), 0, receivePacket.getLength());
 
         if (receivedSentence.equals("prematched!")){
-            sendData = new byte[1024];
             toSend = name;
-            sendData = toSend.getBytes();
-            sendPacket = new DatagramPacket(sendData, sendData.length, IPAddress, portNumber);
-            clientSocket.send(sendPacket);
+            sendMessage(toSend);
 
             receiveData = new byte[1024];
             receivePacket = new DatagramPacket(receiveData, receiveData.length);
@@ -429,11 +420,11 @@ public class ClientMain extends Application{
             receivedSentence = new String(receivePacket.getData(), 0, receivePacket.getLength());
 
             if (receivedSentence.equals("matched!")){
-                flag = true;
+                connectedToServer = true;
             }
 
         }else if (receivedSentence.equals("mismatched!")){
-            flag = false;
+            connectedToServer = false;
         }
     }
 

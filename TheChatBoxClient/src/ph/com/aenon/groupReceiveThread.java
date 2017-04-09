@@ -43,7 +43,7 @@ public class groupReceiveThread extends Thread{
                     e.printStackTrace();
                 }
                 socket.close();
-                System.out.println("Socket Closed!");
+                System.out.println("Group Socket Closed!");
                 break;
             }
 
