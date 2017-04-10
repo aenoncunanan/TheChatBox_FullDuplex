@@ -33,7 +33,9 @@ public class privateReceiveThread extends Thread {
 
             try {
                 clientSocket.receive(receivePacket);
+
                 receivedSentence = new String(receivePacket.getData(), 0, receivePacket.getLength());
+
                 System.out.println(receivedSentence);
                 PrivateChat.convoMessage.appendText("\n" + receivedSentence);
             } catch (IOException e) {

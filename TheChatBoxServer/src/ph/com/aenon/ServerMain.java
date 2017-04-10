@@ -130,7 +130,6 @@ public class ServerMain {
         for (int i = offset; i < sentence.length(); i++){
             name = name + sentence.charAt(i);
         }
-
         boolean flag = false;
         int c;
 

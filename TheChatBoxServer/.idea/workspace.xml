@@ -2,19 +2,16 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="da1e8935-6d5e-4d2a-9be5-b7c5a17155bf" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../TheChatBoxClient/out/production/TheChatBoxClient/ph/com/aenon/ClientMain$1.class" afterPath="$PROJECT_DIR$/../TheChatBoxClient/out/production/TheChatBoxClient/ph/com/aenon/ClientMain$1.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../TheChatBoxClient/out/production/TheChatBoxClient/ph/com/aenon/ClientMain.class" afterPath="$PROJECT_DIR$/../TheChatBoxClient/out/production/TheChatBoxClient/ph/com/aenon/ClientMain.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../TheChatBoxClient/out/production/TheChatBoxClient/ph/com/aenon/GroupChat.class" afterPath="$PROJECT_DIR$/../TheChatBoxClient/out/production/TheChatBoxClient/ph/com/aenon/GroupChat.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../TheChatBoxClient/out/production/TheChatBoxClient/ph/com/aenon/PrivateChat.class" afterPath="$PROJECT_DIR$/../TheChatBoxClient/out/production/TheChatBoxClient/ph/com/aenon/PrivateChat.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../TheChatBoxClient/out/production/TheChatBoxClient/ph/com/aenon/groupReceiveThread.class" afterPath="$PROJECT_DIR$/../TheChatBoxClient/out/production/TheChatBoxClient/ph/com/aenon/groupReceiveThread.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../TheChatBoxClient/out/production/TheChatBoxClient/ph/com/aenon/privateReceiveThread.class" afterPath="$PROJECT_DIR$/../TheChatBoxClient/out/production/TheChatBoxClient/ph/com/aenon/privateReceiveThread.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/TheChatBoxServer/ph/com/aenon/ServerMain.class" afterPath="$PROJECT_DIR$/out/production/TheChatBoxServer/ph/com/aenon/ServerMain.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../TheChatBoxClient/.idea/workspace.xml" afterPath="$PROJECT_DIR$/../TheChatBoxClient/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../TheChatBoxClient/src/ph/com/aenon/ClientMain.java" afterPath="$PROJECT_DIR$/../TheChatBoxClient/src/ph/com/aenon/ClientMain.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../TheChatBoxClient/src/ph/com/aenon/GroupChat.java" afterPath="$PROJECT_DIR$/../TheChatBoxClient/src/ph/com/aenon/GroupChat.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../TheChatBoxClient/src/ph/com/aenon/PrivateChat.java" afterPath="$PROJECT_DIR$/../TheChatBoxClient/src/ph/com/aenon/PrivateChat.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../TheChatBoxClient/src/ph/com/aenon/groupReceiveThread.java" afterPath="$PROJECT_DIR$/../TheChatBoxClient/src/ph/com/aenon/groupReceiveThread.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../TheChatBoxClient/src/ph/com/aenon/privateReceiveThread.java" afterPath="$PROJECT_DIR$/../TheChatBoxClient/src/ph/com/aenon/privateReceiveThread.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/ph/com/aenon/ServerMain.java" afterPath="$PROJECT_DIR$/src/ph/com/aenon/ServerMain.java" />
     </list>
     <ignored path="TheChatBoxServer.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -38,18 +35,14 @@
       <file leaf-file-name="ServerMain.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/ph/com/aenon/ServerMain.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="178">
-              <caret line="59" column="34" lean-forward="true" selection-start-line="59" selection-start-column="34" selection-end-line="59" selection-end-column="34" />
+            <state relative-caret-position="306">
+              <caret line="140" column="13" lean-forward="true" selection-start-line="140" selection-start-column="13" selection-end-line="140" selection-end-column="13" />
               <folding>
                 <element signature="imports" expanded="true" />
-                <element signature="e#497#505#0" expanded="true" />
-                <element signature="e#570#578#0" expanded="true" />
                 <element signature="method#clientConnecting#0;class#ServerMain#0" expanded="false" />
-                <element signature="method#clientDisconnecting#0;class#ServerMain#0" expanded="false" />
                 <element signature="method#clientGoingPrivate#0;class#ServerMain#0" expanded="false" />
                 <element signature="method#clientSendingPrivateMsg#0;class#ServerMain#0" expanded="false" />
                 <element signature="method#clientSendingGroupMsg#0;class#ServerMain#0" expanded="false" />
-                <element signature="method#sendMessage#0;class#ServerMain#0" expanded="false" />
               </folding>
             </state>
           </provider>
@@ -89,7 +82,7 @@
   <component name="ProjectFrameBounds">
     <option name="x" value="-7" />
     <option name="width" value="697" />
-    <option name="height" value="775" />
+    <option name="height" value="765" />
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectView">
@@ -397,7 +390,7 @@
     <servers />
   </component>
   <component name="ToolWindowManager">
-    <frame x="-7" y="0" width="697" height="775" extended-state="0" />
+    <frame x="-7" y="0" width="697" height="765" extended-state="0" />
     <editor active="true" />
     <layout>
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
@@ -409,7 +402,7 @@
       <window_info id="Capture Analysis" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.28421053" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.2610687" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32937685" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Properties" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
@@ -447,7 +440,7 @@
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
-      <option name="time" value="3" />
+      <option name="time" value="4" />
     </breakpoint-manager>
     <watches-manager />
   </component>
@@ -462,14 +455,10 @@
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
             <element signature="imports" expanded="true" />
-            <element signature="e#497#505#0" expanded="true" />
-            <element signature="e#570#578#0" expanded="true" />
             <element signature="method#clientConnecting#0;class#ServerMain#0" expanded="false" />
-            <element signature="method#clientDisconnecting#0;class#ServerMain#0" expanded="false" />
             <element signature="method#clientGoingPrivate#0;class#ServerMain#0" expanded="false" />
             <element signature="method#clientSendingPrivateMsg#0;class#ServerMain#0" expanded="false" />
             <element signature="method#clientSendingGroupMsg#0;class#ServerMain#0" expanded="false" />
-            <element signature="method#sendMessage#0;class#ServerMain#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -480,14 +469,10 @@
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
             <element signature="imports" expanded="true" />
-            <element signature="e#497#505#0" expanded="true" />
-            <element signature="e#570#578#0" expanded="true" />
             <element signature="method#clientConnecting#0;class#ServerMain#0" expanded="false" />
-            <element signature="method#clientDisconnecting#0;class#ServerMain#0" expanded="false" />
             <element signature="method#clientGoingPrivate#0;class#ServerMain#0" expanded="false" />
             <element signature="method#clientSendingPrivateMsg#0;class#ServerMain#0" expanded="false" />
             <element signature="method#clientSendingGroupMsg#0;class#ServerMain#0" expanded="false" />
-            <element signature="method#sendMessage#0;class#ServerMain#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -498,14 +483,10 @@
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
             <element signature="imports" expanded="true" />
-            <element signature="e#497#505#0" expanded="true" />
-            <element signature="e#570#578#0" expanded="true" />
             <element signature="method#clientConnecting#0;class#ServerMain#0" expanded="false" />
-            <element signature="method#clientDisconnecting#0;class#ServerMain#0" expanded="false" />
             <element signature="method#clientGoingPrivate#0;class#ServerMain#0" expanded="false" />
             <element signature="method#clientSendingPrivateMsg#0;class#ServerMain#0" expanded="false" />
             <element signature="method#clientSendingGroupMsg#0;class#ServerMain#0" expanded="false" />
-            <element signature="method#sendMessage#0;class#ServerMain#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -516,14 +497,10 @@
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
             <element signature="imports" expanded="true" />
-            <element signature="e#497#505#0" expanded="true" />
-            <element signature="e#570#578#0" expanded="true" />
             <element signature="method#clientConnecting#0;class#ServerMain#0" expanded="false" />
-            <element signature="method#clientDisconnecting#0;class#ServerMain#0" expanded="false" />
             <element signature="method#clientGoingPrivate#0;class#ServerMain#0" expanded="false" />
             <element signature="method#clientSendingPrivateMsg#0;class#ServerMain#0" expanded="false" />
             <element signature="method#clientSendingGroupMsg#0;class#ServerMain#0" expanded="false" />
-            <element signature="method#sendMessage#0;class#ServerMain#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -534,14 +511,10 @@
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
             <element signature="imports" expanded="true" />
-            <element signature="e#497#505#0" expanded="true" />
-            <element signature="e#570#578#0" expanded="true" />
             <element signature="method#clientConnecting#0;class#ServerMain#0" expanded="false" />
-            <element signature="method#clientDisconnecting#0;class#ServerMain#0" expanded="false" />
             <element signature="method#clientGoingPrivate#0;class#ServerMain#0" expanded="false" />
             <element signature="method#clientSendingPrivateMsg#0;class#ServerMain#0" expanded="false" />
             <element signature="method#clientSendingGroupMsg#0;class#ServerMain#0" expanded="false" />
-            <element signature="method#sendMessage#0;class#ServerMain#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -552,14 +525,10 @@
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
             <element signature="imports" expanded="true" />
-            <element signature="e#497#505#0" expanded="true" />
-            <element signature="e#570#578#0" expanded="true" />
             <element signature="method#clientConnecting#0;class#ServerMain#0" expanded="false" />
-            <element signature="method#clientDisconnecting#0;class#ServerMain#0" expanded="false" />
             <element signature="method#clientGoingPrivate#0;class#ServerMain#0" expanded="false" />
             <element signature="method#clientSendingPrivateMsg#0;class#ServerMain#0" expanded="false" />
             <element signature="method#clientSendingGroupMsg#0;class#ServerMain#0" expanded="false" />
-            <element signature="method#sendMessage#0;class#ServerMain#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -570,14 +539,10 @@
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
             <element signature="imports" expanded="true" />
-            <element signature="e#497#505#0" expanded="true" />
-            <element signature="e#570#578#0" expanded="true" />
             <element signature="method#clientConnecting#0;class#ServerMain#0" expanded="false" />
-            <element signature="method#clientDisconnecting#0;class#ServerMain#0" expanded="false" />
             <element signature="method#clientGoingPrivate#0;class#ServerMain#0" expanded="false" />
             <element signature="method#clientSendingPrivateMsg#0;class#ServerMain#0" expanded="false" />
             <element signature="method#clientSendingGroupMsg#0;class#ServerMain#0" expanded="false" />
-            <element signature="method#sendMessage#0;class#ServerMain#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -588,14 +553,10 @@
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
             <element signature="imports" expanded="true" />
-            <element signature="e#497#505#0" expanded="true" />
-            <element signature="e#570#578#0" expanded="true" />
             <element signature="method#clientConnecting#0;class#ServerMain#0" expanded="false" />
-            <element signature="method#clientDisconnecting#0;class#ServerMain#0" expanded="false" />
             <element signature="method#clientGoingPrivate#0;class#ServerMain#0" expanded="false" />
             <element signature="method#clientSendingPrivateMsg#0;class#ServerMain#0" expanded="false" />
             <element signature="method#clientSendingGroupMsg#0;class#ServerMain#0" expanded="false" />
-            <element signature="method#sendMessage#0;class#ServerMain#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -606,14 +567,10 @@
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
             <element signature="imports" expanded="true" />
-            <element signature="e#497#505#0" expanded="true" />
-            <element signature="e#570#578#0" expanded="true" />
             <element signature="method#clientConnecting#0;class#ServerMain#0" expanded="false" />
-            <element signature="method#clientDisconnecting#0;class#ServerMain#0" expanded="false" />
             <element signature="method#clientGoingPrivate#0;class#ServerMain#0" expanded="false" />
             <element signature="method#clientSendingPrivateMsg#0;class#ServerMain#0" expanded="false" />
             <element signature="method#clientSendingGroupMsg#0;class#ServerMain#0" expanded="false" />
-            <element signature="method#sendMessage#0;class#ServerMain#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -624,14 +581,10 @@
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
             <element signature="imports" expanded="true" />
-            <element signature="e#497#505#0" expanded="true" />
-            <element signature="e#570#578#0" expanded="true" />
             <element signature="method#clientConnecting#0;class#ServerMain#0" expanded="false" />
-            <element signature="method#clientDisconnecting#0;class#ServerMain#0" expanded="false" />
             <element signature="method#clientGoingPrivate#0;class#ServerMain#0" expanded="false" />
             <element signature="method#clientSendingPrivateMsg#0;class#ServerMain#0" expanded="false" />
             <element signature="method#clientSendingGroupMsg#0;class#ServerMain#0" expanded="false" />
-            <element signature="method#sendMessage#0;class#ServerMain#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -642,14 +595,10 @@
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
             <element signature="imports" expanded="true" />
-            <element signature="e#497#505#0" expanded="true" />
-            <element signature="e#570#578#0" expanded="true" />
             <element signature="method#clientConnecting#0;class#ServerMain#0" expanded="false" />
-            <element signature="method#clientDisconnecting#0;class#ServerMain#0" expanded="false" />
             <element signature="method#clientGoingPrivate#0;class#ServerMain#0" expanded="false" />
             <element signature="method#clientSendingPrivateMsg#0;class#ServerMain#0" expanded="false" />
             <element signature="method#clientSendingGroupMsg#0;class#ServerMain#0" expanded="false" />
-            <element signature="method#sendMessage#0;class#ServerMain#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -660,14 +609,10 @@
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
             <element signature="imports" expanded="true" />
-            <element signature="e#497#505#0" expanded="true" />
-            <element signature="e#570#578#0" expanded="true" />
             <element signature="method#clientConnecting#0;class#ServerMain#0" expanded="false" />
-            <element signature="method#clientDisconnecting#0;class#ServerMain#0" expanded="false" />
             <element signature="method#clientGoingPrivate#0;class#ServerMain#0" expanded="false" />
             <element signature="method#clientSendingPrivateMsg#0;class#ServerMain#0" expanded="false" />
             <element signature="method#clientSendingGroupMsg#0;class#ServerMain#0" expanded="false" />
-            <element signature="method#sendMessage#0;class#ServerMain#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -678,14 +623,10 @@
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
             <element signature="imports" expanded="true" />
-            <element signature="e#497#505#0" expanded="true" />
-            <element signature="e#570#578#0" expanded="true" />
             <element signature="method#clientConnecting#0;class#ServerMain#0" expanded="false" />
-            <element signature="method#clientDisconnecting#0;class#ServerMain#0" expanded="false" />
             <element signature="method#clientGoingPrivate#0;class#ServerMain#0" expanded="false" />
             <element signature="method#clientSendingPrivateMsg#0;class#ServerMain#0" expanded="false" />
             <element signature="method#clientSendingGroupMsg#0;class#ServerMain#0" expanded="false" />
-            <element signature="method#sendMessage#0;class#ServerMain#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -696,14 +637,10 @@
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
             <element signature="imports" expanded="true" />
-            <element signature="e#497#505#0" expanded="true" />
-            <element signature="e#570#578#0" expanded="true" />
             <element signature="method#clientConnecting#0;class#ServerMain#0" expanded="false" />
-            <element signature="method#clientDisconnecting#0;class#ServerMain#0" expanded="false" />
             <element signature="method#clientGoingPrivate#0;class#ServerMain#0" expanded="false" />
             <element signature="method#clientSendingPrivateMsg#0;class#ServerMain#0" expanded="false" />
             <element signature="method#clientSendingGroupMsg#0;class#ServerMain#0" expanded="false" />
-            <element signature="method#sendMessage#0;class#ServerMain#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -714,14 +651,10 @@
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
             <element signature="imports" expanded="true" />
-            <element signature="e#497#505#0" expanded="true" />
-            <element signature="e#570#578#0" expanded="true" />
             <element signature="method#clientConnecting#0;class#ServerMain#0" expanded="false" />
-            <element signature="method#clientDisconnecting#0;class#ServerMain#0" expanded="false" />
             <element signature="method#clientGoingPrivate#0;class#ServerMain#0" expanded="false" />
             <element signature="method#clientSendingPrivateMsg#0;class#ServerMain#0" expanded="false" />
             <element signature="method#clientSendingGroupMsg#0;class#ServerMain#0" expanded="false" />
-            <element signature="method#sendMessage#0;class#ServerMain#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -732,14 +665,10 @@
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
             <element signature="imports" expanded="true" />
-            <element signature="e#497#505#0" expanded="true" />
-            <element signature="e#570#578#0" expanded="true" />
             <element signature="method#clientConnecting#0;class#ServerMain#0" expanded="false" />
-            <element signature="method#clientDisconnecting#0;class#ServerMain#0" expanded="false" />
             <element signature="method#clientGoingPrivate#0;class#ServerMain#0" expanded="false" />
             <element signature="method#clientSendingPrivateMsg#0;class#ServerMain#0" expanded="false" />
             <element signature="method#clientSendingGroupMsg#0;class#ServerMain#0" expanded="false" />
-            <element signature="method#sendMessage#0;class#ServerMain#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -750,14 +679,10 @@
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
             <element signature="imports" expanded="true" />
-            <element signature="e#497#505#0" expanded="true" />
-            <element signature="e#570#578#0" expanded="true" />
             <element signature="method#clientConnecting#0;class#ServerMain#0" expanded="false" />
-            <element signature="method#clientDisconnecting#0;class#ServerMain#0" expanded="false" />
             <element signature="method#clientGoingPrivate#0;class#ServerMain#0" expanded="false" />
             <element signature="method#clientSendingPrivateMsg#0;class#ServerMain#0" expanded="false" />
             <element signature="method#clientSendingGroupMsg#0;class#ServerMain#0" expanded="false" />
-            <element signature="method#sendMessage#0;class#ServerMain#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -768,14 +693,10 @@
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
             <element signature="imports" expanded="true" />
-            <element signature="e#497#505#0" expanded="true" />
-            <element signature="e#570#578#0" expanded="true" />
             <element signature="method#clientConnecting#0;class#ServerMain#0" expanded="false" />
-            <element signature="method#clientDisconnecting#0;class#ServerMain#0" expanded="false" />
             <element signature="method#clientGoingPrivate#0;class#ServerMain#0" expanded="false" />
             <element signature="method#clientSendingPrivateMsg#0;class#ServerMain#0" expanded="false" />
             <element signature="method#clientSendingGroupMsg#0;class#ServerMain#0" expanded="false" />
-            <element signature="method#sendMessage#0;class#ServerMain#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -786,14 +707,10 @@
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
             <element signature="imports" expanded="true" />
-            <element signature="e#497#505#0" expanded="true" />
-            <element signature="e#570#578#0" expanded="true" />
             <element signature="method#clientConnecting#0;class#ServerMain#0" expanded="false" />
-            <element signature="method#clientDisconnecting#0;class#ServerMain#0" expanded="false" />
             <element signature="method#clientGoingPrivate#0;class#ServerMain#0" expanded="false" />
             <element signature="method#clientSendingPrivateMsg#0;class#ServerMain#0" expanded="false" />
             <element signature="method#clientSendingGroupMsg#0;class#ServerMain#0" expanded="false" />
-            <element signature="method#sendMessage#0;class#ServerMain#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -804,14 +721,10 @@
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
             <element signature="imports" expanded="true" />
-            <element signature="e#497#505#0" expanded="true" />
-            <element signature="e#570#578#0" expanded="true" />
             <element signature="method#clientConnecting#0;class#ServerMain#0" expanded="false" />
-            <element signature="method#clientDisconnecting#0;class#ServerMain#0" expanded="false" />
             <element signature="method#clientGoingPrivate#0;class#ServerMain#0" expanded="false" />
             <element signature="method#clientSendingPrivateMsg#0;class#ServerMain#0" expanded="false" />
             <element signature="method#clientSendingGroupMsg#0;class#ServerMain#0" expanded="false" />
-            <element signature="method#sendMessage#0;class#ServerMain#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -822,14 +735,10 @@
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
             <element signature="imports" expanded="true" />
-            <element signature="e#497#505#0" expanded="true" />
-            <element signature="e#570#578#0" expanded="true" />
             <element signature="method#clientConnecting#0;class#ServerMain#0" expanded="false" />
-            <element signature="method#clientDisconnecting#0;class#ServerMain#0" expanded="false" />
             <element signature="method#clientGoingPrivate#0;class#ServerMain#0" expanded="false" />
             <element signature="method#clientSendingPrivateMsg#0;class#ServerMain#0" expanded="false" />
             <element signature="method#clientSendingGroupMsg#0;class#ServerMain#0" expanded="false" />
-            <element signature="method#sendMessage#0;class#ServerMain#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -840,14 +749,10 @@
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
             <element signature="imports" expanded="true" />
-            <element signature="e#497#505#0" expanded="true" />
-            <element signature="e#570#578#0" expanded="true" />
             <element signature="method#clientConnecting#0;class#ServerMain#0" expanded="false" />
-            <element signature="method#clientDisconnecting#0;class#ServerMain#0" expanded="false" />
             <element signature="method#clientGoingPrivate#0;class#ServerMain#0" expanded="false" />
             <element signature="method#clientSendingPrivateMsg#0;class#ServerMain#0" expanded="false" />
             <element signature="method#clientSendingGroupMsg#0;class#ServerMain#0" expanded="false" />
-            <element signature="method#sendMessage#0;class#ServerMain#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -858,14 +763,38 @@
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
             <element signature="imports" expanded="true" />
-            <element signature="e#497#505#0" expanded="true" />
-            <element signature="e#570#578#0" expanded="true" />
             <element signature="method#clientConnecting#0;class#ServerMain#0" expanded="false" />
-            <element signature="method#clientDisconnecting#0;class#ServerMain#0" expanded="false" />
             <element signature="method#clientGoingPrivate#0;class#ServerMain#0" expanded="false" />
             <element signature="method#clientSendingPrivateMsg#0;class#ServerMain#0" expanded="false" />
             <element signature="method#clientSendingGroupMsg#0;class#ServerMain#0" expanded="false" />
-            <element signature="method#sendMessage#0;class#ServerMain#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/ph/com/aenon/ServerMain.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="method#clientConnecting#0;class#ServerMain#0" expanded="false" />
+            <element signature="method#clientGoingPrivate#0;class#ServerMain#0" expanded="false" />
+            <element signature="method#clientSendingPrivateMsg#0;class#ServerMain#0" expanded="false" />
+            <element signature="method#clientSendingGroupMsg#0;class#ServerMain#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/ph/com/aenon/ServerMain.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="method#clientConnecting#0;class#ServerMain#0" expanded="false" />
+            <element signature="method#clientGoingPrivate#0;class#ServerMain#0" expanded="false" />
+            <element signature="method#clientSendingPrivateMsg#0;class#ServerMain#0" expanded="false" />
+            <element signature="method#clientSendingGroupMsg#0;class#ServerMain#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -873,18 +802,14 @@
     <entry file="file://$PROJECT_DIR$/src/ph/com/aenon/ServerThread.java" />
     <entry file="file://$PROJECT_DIR$/src/ph/com/aenon/ServerMain.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="178">
-          <caret line="59" column="34" lean-forward="true" selection-start-line="59" selection-start-column="34" selection-end-line="59" selection-end-column="34" />
+        <state relative-caret-position="306">
+          <caret line="140" column="13" lean-forward="true" selection-start-line="140" selection-start-column="13" selection-end-line="140" selection-end-column="13" />
           <folding>
             <element signature="imports" expanded="true" />
-            <element signature="e#497#505#0" expanded="true" />
-            <element signature="e#570#578#0" expanded="true" />
             <element signature="method#clientConnecting#0;class#ServerMain#0" expanded="false" />
-            <element signature="method#clientDisconnecting#0;class#ServerMain#0" expanded="false" />
             <element signature="method#clientGoingPrivate#0;class#ServerMain#0" expanded="false" />
             <element signature="method#clientSendingPrivateMsg#0;class#ServerMain#0" expanded="false" />
             <element signature="method#clientSendingGroupMsg#0;class#ServerMain#0" expanded="false" />
-            <element signature="method#sendMessage#0;class#ServerMain#0" expanded="false" />
           </folding>
         </state>
       </provider>

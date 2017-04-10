@@ -1,10 +1,8 @@
 package ph.com.aenon;
 
-import javafx.application.Platform;
 import javafx.geometry.Insets;
 import javafx.geometry.Pos;
 import javafx.scene.Parent;
-import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.control.TextArea;
 import javafx.scene.control.TextField;
@@ -17,7 +15,6 @@ import javafx.scene.paint.Color;
 import javafx.scene.text.Font;
 import javafx.scene.text.FontWeight;
 import javafx.scene.text.Text;
-import javafx.stage.Stage;
 
 import static javafx.geometry.Pos.BASELINE_LEFT;
 import static javafx.geometry.Pos.CENTER;
@@ -32,7 +29,6 @@ public class PrivateChat {
     private static String userToChat;
     private static String addressToChat;
     private static TextField message;
-    public static String msg;
 
     public static TextArea convoMessage;
 
@@ -106,7 +102,7 @@ public class PrivateChat {
         gridTitle.setTranslateX(0);
         gridTitle.setTranslateY(120);
 
-        gridButton.setTranslateX(240);
+        gridButton.setTranslateX(290);
         gridButton.setTranslateY(115);
 
         logOutBtn.setOnAction(event -> {

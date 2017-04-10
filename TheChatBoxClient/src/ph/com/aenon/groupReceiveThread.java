@@ -8,7 +8,7 @@ import java.net.*;
  */
 public class groupReceiveThread extends Thread{
 
-    MulticastSocket socket = new MulticastSocket(4446);
+    MulticastSocket clientSocket = new MulticastSocket(4446);
     InetAddress address = InetAddress.getByName("230.0.0.1");
 
     DatagramPacket receivePacket;
@@ -16,7 +16,7 @@ public class groupReceiveThread extends Thread{
     public static boolean isConnected;
 
     public groupReceiveThread() throws IOException {
-        socket.joinGroup(address);
+        clientSocket.joinGroup(address);
         isConnected = true;
     }
 
@@ -24,8 +24,9 @@ public class groupReceiveThread extends Thread{
         while (isConnected){
             byte[] buf = new byte[256];
             receivePacket = new DatagramPacket(buf, buf.length);
+
             try {
-                socket.receive(receivePacket);
+                clientSocket.receive(receivePacket);
             } catch (IOException e) {
                 System.out.println("Unable to get data!");
                 e.printStackTrace();
@@ -38,40 +39,15 @@ public class groupReceiveThread extends Thread{
 
             if (!isConnected){
                 try {
-                    socket.leaveGroup(address);
+                    clientSocket.leaveGroup(address);
                 } catch (IOException e) {
                     e.printStackTrace();
                 }
-                socket.close();
+                clientSocket.close();
                 System.out.println("Group Socket Closed!");
                 break;
             }
 
         }
-
-
-//        try {
-//            clientSocket = new DatagramSocket(port);
-//        } catch (SocketException e) {
-//            e.printStackTrace();
-//        }
-//
-//        while(true){
-//
-//            try {
-//                receiveData = new byte[1024];
-//                receivePacket = new DatagramPacket(receiveData, receiveData.length);
-//
-//                clientSocket.receive(receivePacket);
-//                String received = new String(receivePacket.getData());
-//                System.out.println(received);
-//                GroupChat.convoMessage.appendText("\n" + received);
-//            } catch (IOException e) {
-//                System.out.println(e);
-//                e.printStackTrace();
-//            }
-//
-//        }
-
     }
 }
