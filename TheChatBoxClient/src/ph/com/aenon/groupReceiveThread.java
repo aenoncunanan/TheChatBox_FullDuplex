@@ -22,7 +22,7 @@ public class groupReceiveThread extends Thread{
 
     public void run(){
         while (isConnected){
-            byte[] buf = new byte[256];
+            byte[] buf = new byte[1024];
             receivePacket = new DatagramPacket(buf, buf.length);
 
             try {
